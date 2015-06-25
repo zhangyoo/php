@@ -1,0 +1,81 @@
+/*订单页面*/
+.customer_select{height: 136px; overflow-y: scroll;}
+.customer_select label{margin-right: 20px}
+.one_select input{margin: 0}
+.customer_select span{width: 200px;float: left;}
+/*订单弹框*/
+.big_bg_brand{position:fixed;top:0;left:0;width:100%;height:100%;background:#000000;filter:alpha(opacity=30);opacity: 0.3;z-index:1}
+.pop_dialog_top,.editStatus,.pop_dialog_top_two{width: 650px;padding: 0 10px;background: #FFFFFF;position: fixed;left: 25%;top: 16%;z-index: 20;border: 2px solid #A0A0A0;border-radius: 5px}
+.dialog_two_top,.editStatus_top{height: 40px;line-height: 45px;border-bottom: 1px solid #CCCCCC}
+.dialog_two_top b,.editStatus_top b{font-size: 14px}
+.dialog_two_top a,.editStatus_top a{float: right;margin-top:15px;padding: 2px 5px;}
+.psBox,.top_two_ul{height: auto;overflow: hidden;padding-bottom: 40px;padding-left: 28px;}
+.savePfix,.editStatus_save{width: 90%;position:absolute;bottom: 0;margin: 0;right:35px;background: #fff;padding: 10px 0 10px}
+.dialog_content_top,.editStatusDetail{height: 490px;overflow-y: scroll;overflow-x: hidden}
+.info_img_ul li,.top_two_ul li{position:relative;float: left;width: 185px;height: 230px;margin:10px 5px 0 0;cursor: pointer }
+.info_img_ul li .deleteImg{display: inline;position: absolute;right: 5px;top: 5px;cursor: pointer}
+.info_img_ul li span{position:absolute;left: 0;bottom: 0;}
+.info_img_ul li span textarea{width:100%}
+.info_img_ul li span.bind_pro_spa,.top_two_ul li span.bind_pro_spa{left: 0;bottom: 10px;width:100%}
+.info_img_ul li .deleteImg.hide{display: none;}
+.info_psearch{padding: 20px 0 10px;color: #666666}
+.info_psearch input{margin:0 20px 0 0;border-radius: 5px;}
+.info_psearch input.info_psearch_value{border:1px solid #C9C9C9;padding: 3px}
+.info_psearch input.info_psearch_button{padding: 5px 15px;color: #FFFFFF;border: 0;background: #0055CC}
+.dialog_save{text-align: right;padding-right: 10px}
+.editStatus_save{text-align: right;padding-right: 10px;width: 94%;}
+.dialog_save input,.editStatus_save input{padding: 6px 10px;margin-left: 5px;background: #51B148;color: #FFFFFF;border-radius: 5px;border: none}
+
+
+/*模型页面*/
+.addColor,.addColorDel{padding-left: 30px;position: relative}
+.addColor i{position: absolute;left:10px;top:12px;padding: 2px 5px;background: url(../images/shrink.png) no-repeat;cursor: pointer;}
+.addColor i.colorAddIcon{background-position: -1px 5px;}
+.addColor i.colorDelIcon{background-position: -1px -19px;}
+#style{display: block;height: 30px;line-height: 30px}
+#style label,.one_select label{display: inline;margin-left: 5px;font-size: 12px}
+.angle_image .moldColor{ width: 20%}
+.angle_image .moldColor p img{width: 200px;height: 150px}
+
+/*空间页面*/
+.angle_image{float: left;clear: both;padding-left: 30px;margin: 15px 0;position: relative}
+.angle_image .del_angle_icon{position: absolute;left: 0px;top: 2px;width:20px;height: 20px;cursor: pointer;
+               background: url(../images/del_angle_icon.png) no-repeat center center;}
+.angleVal_space{float: left;width: 100%;margin-bottom: 5px}
+.anglePics{float: left;width: 30%;overflow: hidden}
+.anglePics p{width: 100%;margin-top: 10px}
+.anglePics p img{width:250px;height:200px;}
+
+input.image_select,input.image3{padding: 3px 9px;}
+
+/*素材展示颜色*/
+.disColorList{float: left; width:80%;}
+.disColorList span{float: left;width: 15%}
+.disColorList span img{width:15px;height:15px;}
+.disColorList span input{margin: 0}
+.disColorList span label{display: inline}
+
+/*查看模型*/
+.order_info{padding: 10px 0}
+.order_info span{padding-right: 40px;}
+.texture_display table{width:100%;margin-bottom: 20px;border-collapse: collapse;border-width: thin;border-style: solid;border-color: #CCCCCC}
+.texture_display table.table-hover tr td span{padding: 0}
+.texture_display table th{border-color: #CCCCCC;padding: 15px;text-align: left;}
+.texture_display table th span{padding-top: 10px;float: left;}
+.texture_display table th span input{margin: 0;}
+.texture_display table tr td{border-color: #CCCCCC;padding: 10px}
+.texture_display table tr img.texture_color_img{width:20px;height:20px}
+.texture_display table tr td span{padding-left: 10px;}
+.texture_display table tr td p{margin: 5px 0}
+.texture_display table tr td p a{float: right;padding: 8px 0;}
+.texture_display table tr td p.tex_img_list,.rig_moldTex p.tex_img_list,.texture_display table tr td p.tex_img_list_floorplan{position: relative}
+.texture_display table tr td p.tex_img_list img,.mold_text_type .mold_text_GM .rig_moldTex img.mold_yy_img,.texture_display table tr td p.tex_img_list_floorplan img{width: 60px;height: 40px;}
+.mold_text_type{margin-top: 50px;border-left: 1px solid #CCCCCC;border-top: 1px solid #CCCCCC;border-right: 1px solid #CCCCCC;
+               padding: 10px 20px;font-size: 14px;}
+.clearfix:after {content: "."; display: block; height:0;line-height: 0;font-size: 0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+.mold_text_type.change_mold_tex_style{margin: 0}
+.mold_text_type .mold_text_GM{padding: 5px 0;float: left;width:100% }
+.mold_text_type .mold_text_GM .lef_moldTex{float: left;width:12%;text-align: right}
+.mold_text_type .mold_text_GM .rig_moldTex{float: left;width:85%;margin-left: 1%;}
+.mold_text_type .mold_text_GM .rig_moldTex input.mold_path_text{width: 95%;height: 20px}

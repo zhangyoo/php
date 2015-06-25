@@ -1,0 +1,87 @@
+/*站内信主页*/
+.M_top_content{float: left;width:960px;padding: 10px 15px;border: 1px solid #DFE0E4}
+.left_top_content{float: left;width: 285px;border-right: 1px solid #DFE0E4;line-height: 2em}
+.left_top_content span{padding-right: 20px;font-size: 14px;font-weight: bold}
+.right_top_content{float: left;width: 70%}
+.right_top_content .top_rig_add{padding: 3px 5px;border: 1px solid #B6B7B9;border-radius: 5px}
+.right_top_content .top_rig_add a{color: #3B5998;font-weight: bold}
+.M_bottom_content{float: left;width:990px;margin-bottom: 40px;border-left: 1px solid #DFE0E4;border-right: 1px solid #DFE0E4;border-bottom: 1px solid #DFE0E4}
+.left_bottom_content{float: left;width: 300px;border-right: 1px solid #DFE0E4;height: 682px}
+.left_bottom_content .bc_box{padding: 10px 15px;border-bottom: 1px solid #DFE0E4}
+.bc_box .M_search{border: 1px solid #DFE0E4;position: relative;height: 2em;padding: 1px;line-height: 2em;border-radius: 5px}
+.bc_box .M_search input{width: 85%;height: 1.2em;line-height: 1.2em;border: 0;margin-bottom: 0;box-shadow:none}
+.bc_box .M_search a{background: url(../images/icons.png) no-repeat scroll -85px -5px;
+    padding: 10px;position: absolute;right: 5px;top: 6px;}
+.bc_box.M_list{padding: 0;float: left;width: 100%;border: 0}
+.list_single_box{float: left;width: 98%;border-bottom: 1px solid #DFE0E4;padding:3% 1%}
+.list_single_box .img_sbx{float: left;width:20%}
+.list_single_box .img_sbx img{width:50px;height:50px}
+.list_single_box .img_rig_sbx{float: left;width:80%}
+.list_single_box .img_rig_sbx p{position: relative;line-height: 2em;float: left;width: 100%}
+.list_single_box .img_rig_sbx p b a{color: #000000}
+.read_del_m{float: right;position: absolute;right: 0;bottom: 0}
+.read_del_m i a{display: none;padding: 2px 8px;position:absolute;bottom: 13px;right: 3px;
+               white-space: pre;color: #ffffff;background: #282828;border-radius: 5px}
+.read_del_m i{background: url(../images/icons.png) no-repeat scroll 0px -98px;cursor: pointer;position: relative}
+.read_del_m i.no_read{background-position: 1px -66px;display: inline-block;height: 9px;width: 9px;}
+.read_del_m i.no_read:hover{background-position: -12px -66px;}
+.read_del_m i.no_del{background-position: 2px -46px;display: inline-block;height: 11px;width: 11px;}
+.read_del_m i.no_del:hover{background-position: -53px -47px;}
+.read_del_m i:hover a{display: block}
+.right_bottom_content{float: left;width: 689px}
+.message_default_index{margin-top: 150px}
+.message_default_index p{text-align: center;line-height: 2em}
+.message_default_index p a{color: #3B5998}
+
+/*创建消息页面*/
+.newMLef{margin-left: 20px;font-weight: bold;font-size: 14px}
+.receiver {border-bottom: 1px solid #dfe0e4;color: #4e5665;font-size: 14px;line-height: 35px;padding-left: 70px;position: relative;}
+.receiver label{font-weight: lighter;left: 15px;position: absolute;top: 15px;}
+#recieverBox {border: 1px solid #cccccc;line-height: 26px;margin: 10px 0;min-height: 28px;width: 520px;}
+.receiver .receiverCon {background: #fff;border: 1px solid #dfe0e4;display: none;height: 300px;
+    left: 70px;line-height: 20px;overflow-y: scroll;position: absolute;width: 500px;padding: 10px;top: 39px}
+.receiver .receiverCon p a{color: #4f4f4f}
+.dialogBox {width: 100%;}
+#show {background: #f2f2f2;border-bottom: 1px solid #ccc;height: 480px;margin: 0 auto;vertical-align: top;width: 100%;}
+.comment {background:#f2f2f2; margin: 0 auto;padding: 13px 0px 13px; position: relative;width: 100%;}
+.comment .com_form {background:#fff;border: 1px solid #ccc;height: 98px;position: relative;margin: 0 20px}
+.comment .com_form textarea {border: 0 none;color: #aaa;padding: 5px;resize: none;width: 95%;min-height: 50px;}
+.com_form p {background:#fff;border-top: 1px solid #eee;color: #aaa;height: 34px;line-height: 34px;position: relative;}
+.sub_btn {background:#adbad4;border: 1px solid #538312;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); color: #e8f0de;cursor: pointer;
+  display: inline-block;font: bold 14px/100% Arial,Helvetica,sans-serif;margin: 0 8px;outline: medium none;vertical-align: baseline;
+  padding: 0.2em 0.8em 0.3em;position: absolute;right: 0;text-align: center;text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);top: 5px;}
+.com_form p .addFile, .com_form p .addPic {border-right: 1px solid #eee;cursor: pointer;display: inline-block;padding-left: 10px;width: 96px;}
+.com_form p .addFile i {background: url(../images/icons.png) no-repeat scroll -232px 5px;padding: 9px;}
+.com_form p .addFile, .com_form p .addPic {border-right: 1px solid #eee;cursor: pointer;display: inline-block;padding-left: 10px;width: 96px;}
+.com_form p .addPic i {background: url(../images/icons.png) no-repeat scroll -264px 5px;padding: 9px;}
+.sendEnter {bottom: 0;line-height: 35px;position: absolute;right: 70px;}
+.sendEnter input {margin-top: -3px;}
+span.emotion:hover{background-position:2px -28px}
+span.emotion {background: url(../images/icon.gif) no-repeat scroll 2px 2px;
+  cursor: pointer; height: 20px; padding-left: 20px;position: absolute;right: 10px;top: -50px;}
+
+/*查看消息界面*/
+.fl {float: left;}
+.fr { float: right;}
+#show.showView{height: 555px;position: relative; margin: 0 auto;}
+#show .showBox {bottom: 30px;height: 520px;left: 15px;overflow-y: auto;position: absolute;width: 98%;}
+#show .startTime {color: #aaa;margin-bottom: 15px;text-align: center;}
+#show .dialogBox1 {background: none repeat #fff; border-radius: 5px;padding: 20px;position: relative;width: 82%;}
+.mb20 {margin-bottom: 20px;}
+#show .contactPic {height: 50px; position: relative;width: 50px; z-index: 1;}
+#show .contactPic img{width:50px;height:50px}
+#show .contact {color: #4e5665; font-size: 14px; font-weight: bold;}
+#show .dialogBox1-info {color: #808080;font-size: 12px;}
+#show .dialogBox1 .trigon {
+  border-color: #f2f2f2 #f2f2f2 #f2f2f2 #fff;border-style: solid;border-width: 7px;display: block;position: absolute;right: -14px;
+  top: 18px;width: 0px;}
+#show .dialogBox2 .trigon {border-color: #f2f2f2 #fff #f2f2f2 #f2f2f2;border-style: solid;border-width: 7px;display: block;
+  left: -14px;position: absolute;top: 18px;width: 0px;}
+.qqFace {background: none repeat #fff;border: 1px solid #dfe6f6;margin-top: 4px;padding: 2px;}
+.searchMessage .result {background: #252b3d;color: #fff;height: 60px;line-height: 20px;padding-top: 10px;text-align: center;width: 100%;}
+.M_list .selected {background: none repeat #252b3d;color:#FFFFFF}
+.M_list .list_single_box.selected b a{color: #FFFFFF}
+.M_list .list_single_box.selected:hover b a{color:#808080}
+.M_list .list_single_box b .sel_a{color:#808080}
+.list_single_box:hover{background: #f4f6f9;color:#4f4f4f}
+.list_single_box:hover i a{color:#FFFFFF}
