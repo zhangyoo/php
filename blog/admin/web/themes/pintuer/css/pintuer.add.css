@@ -1,0 +1,14 @@
+/* 
+    Document   : pintuer.add
+    Created on : 2015-6-22, 22:47:29
+    Author     : zhangyong
+    Description:
+        自定义的样式
+*/
+
+.pagination  li span { 
+      padding: 8px 12px;
+      display: block;
+      line-height: 18px;
+}
+
