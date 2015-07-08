@@ -1,0 +1,67 @@
+@charset "utf-8";
+@import url("global.css");
+@import url("lib.css");
+/* CSS Document */
+
+
+/*link*/
+.linkBlue,.linkBlue a:link,.linkBlue a:visited,.linkBlue:link,.linkBlue a:visited,.linkBlue:visited{color:#2C4A77!important;}
+.linkBlue a:hover,.linkBlue:hover{color:#2C4A77!important;}
+.linkBlack,.linkBlack a:link,.linkBlack a:visited,.linkBlack:link,.linkBlack:visited{color:#000!important;}
+.linkBlack a:hover.linkBlack:hover{color:#000!important;}
+.linkRed,.linkRed a:link,.linkRed a:visited,a.linkRed:link,a.linkRed:visited{color:#ff3300!important;}
+.linkRed a:hover,.linkRed:hover{color:#ff3300!important;}
+.linkWhite,.linkWhite a:link,.linkWhite a:visited,.linkWhite:link,.linkWhite:visited{color:#ffffff!important;}
+.linkWhite a:hover,.linkWhite:hover{color:#ffffff!important;}
+.linkGreen,.linkGreen a:link,.linkGreen a:visited,.linkGreen:link,.linkGreen:visited{color:#009900 !important;}
+.linkGreen a:hover.linkGreen:hover{color:#009900!important;}
+.linkYellow,.linkYellow a:link,.linkYellow a:visited,.linkYellow:link,.linkYellow:visited{color:#fb4410!important;}
+.linkYellow a:hover,.linkYellow:hover{color:#fb4410!important;}
+.linkGrey,.linkGrey a:link,.linkGrey a:visited,.linkGrey:link,.linkGrey:visited{color:#999999!important;}
+.linkGrey a:hover.linkGrey:hover{color:#999999!important;}
+.linkOrange,.linkOrange a:link,.linkOrange a:visited,.linkOrange:link,.linkOrange:visited{color:#f60!important;}
+.linkOrange a:hover.linkOrange:hover{color:#f60!important;}
+.linkRose,.linkRose a:link,.linkRose a:visited,.linkRose:link,.linkRose:visited{color:#e80274!important;}
+.linkRose a:hover.linkRose:hover{color:#e80274!important;}
+
+/*=================================================================================================================================================================================================================================*/
+
+.transitional-wide{background: #f5f5f5;}
+.transitional-wide .container-fluid{padding: 0;}
+
+.goToPages{float:right}
+.goToPages .pageInput{width:30px;height: 16px;line-height:16px;margin: 0;text-align: center;border: 1px solid #CCCCCC}
+.goToPages .clickPageIcon{cursor:pointer;padding: 0 5px;height: 2em;text-align: center;border: 1px solid #CCCCCC}
+
+.inputLenmin{width:60px;}
+.inputLen{width:100px;}
+.inputLen2{width:200px;}
+.maxInputLen{width:500px;}
+
+.iconsTrans{position: relative;top:5px;display: inline-block;width: 17px;height: 17px;background: url(/common/images/icons.png) -148px -286px;
+-webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+td.col-1,td.td-0{position:relative;}
+.table-hover #img_msg img{border: 2px solid #ccc;
+height: 201px;
+z-index: 2;
+position: absolute;
+left: 80%;
+margin-top: -60px;max-width: 300px;min-width: 298px}
+
+.tex_img_list #img_msg_mold img{border: 2px solid #ccc;
+height: 300px;
+z-index: 2;
+position: absolute;
+left: 15%;
+bottom: 30px;
+width: 300px;}
+
+.tex_img_list_floorplan #img_msg_mold{width:300px;left: 15%;position: absolute;bottom: 30px;}
+.tex_img_list_floorplan #img_msg_mold img{border: 2px solid #ccc;height: auto;width: 100%;-index: 2;}
+
+a.upMoldColor{color: #FF0000;text-decoration:underline;padding: 0 2px;}
+span.moldSpanStyle{display: block}

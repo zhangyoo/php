@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*分页样式*/
+.addpage_style{height: auto;overflow: hidden}
+.page_list{float: right;height: 40px;}
+.page_list li{background: #fff;display: inline-block;font-size: 12px;margin-left: 6px;padding: 1px 6px;}
+.page_list li.page{border: 1px solid #c3c3c3;}
+.page_list li.selected{background:#2e6ab1;border: 1px solid #ddd;color: #fff;font-weight: bold;}
+ul.yiiPager{float: inherit;}
+ul.yiiPager a:link, ul.yiiPager li.selected a{color:#FFFFFF;font-weight: bold}
+.page_list li.next,.page_list li.previous,.page_list li.first,.page_list li.last{border: 1px solid #c3c3c3;}
+ul.yiiPager .first, ul.yiiPager .last{display: block}
+ul.yiiPager a:link, ul.yiiPager a:visited{color: #4f4f4f;text-decoration: none;border: none;font-weight:normal;padding: 0;}
+ul.yiiPager .hidden{visibility: inherit;}
+ul.yiiPager .hidden a{color: #CCCCCC}
+
+/*操作文字样式*/
+.operate_one{border:1px solid #B3B3B3;border-radius: 3px;padding:2px 5px}
+.table th.info-title,.table td.info-title{padding-left: 70px;}
+.table td.title_parent{background: url(../images/click_display.png) no-repeat 0 center;}
+.table td.title_child{background: url(../images/list_icon.gif) no-repeat 40px center;}
+
+/*全局样式*/
+.table th, .table td{vertical-align: middle;word-break: break-all;}
+
+/*层级样式*/
+.edit i {background: url(../images/sign_4.png) no-repeat scroll -65px 0 transparent;
+cursor: pointer;display: inline-block;height: 15px;position: relative;top: 5px;width: 15px;}
+
+/*修改指定的任务接受者*/
+a.reBindTask{background: url(../images/modify_icon.png) no-repeat center center;display: inline-block;width: 20px;height: 20px}
+
+.list_more_detail p{word-break: break-all;}
+
+/*标签绑定真实分类弹框*/
+.dialog_bind_cat{position: fixed;z-index: 10;left:40%;top: 16%;width: 300px;padding: 5px;background: url(../images/iccccon_03.gif) repeat-x #C4D2E3;border-radius: 3px;border: 1px solid #CCCCCC}
+.dialog_bind_cat_top{float: left;height: 20px;line-height: 20px;width: 100%;padding-bottom: 5px}
+.dialog_bind_cat_top a{float: right;margin-top: 3px;}
+.dialog_bind_cat_content{float: left;width:300px;height: 500px;position: relative;background: #FFFFFF}
+.dbcc_con{float: left;width: 96%;padding: 2%;height: 88%;overflow-y: scroll;overflow-x: hidden}
+ul.dbcc_ul_one{float: left;padding: 2% 3%;}
+ul.dbcc_ul_one li.dbcc_li_one{float: left;width:100%}
+ul.dbcc_ul_two{float: left;padding-left: 5%;display: none}
+ul.dbcc_ul_two li.dbcc_li_two{float: left;width: 100%}
+ul.dbcc_ul_three{float: left;padding-left: 8%;display: none;}
+ul.dbcc_ul_three li.dbcc_li_three{float: left;width: 100%}
+.dbcc_con span{float: left;width:100%;padding-left: 12px;cursor:pointer;background: url(../images/iccccon_14.gif) no-repeat left center}
+.dbcc_con input{margin: 0}
+
+
+.dbcc_save{position: absolute;bottom: 5px;right: 4%}
+.dbcc_save button{padding: 3px 15px;border: 1px solid #97AFCD;border-radius: 3px;}

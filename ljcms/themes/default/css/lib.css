@@ -1,0 +1,243 @@
+@charset "utf-8";
+/*模块通用样式*/
+/*============================================================================================================================*/
+/*公用*/
+.sectionBox{position: relative;}
+.sectionBox h1,.sectionBox h2,.sectionBox h3,.sectionBox h4,.sectionBox h5,.sectionBox h6{font-size: 16px;font-weight: bold;font-family:"Microsoft YaHei";color: #333;padding-left: 10px;}
+.sectionBox .more{ position:absolute;background: url(../images/ico.png) no-repeat 30px -10px;top: 0;right: 0;}
+.sectionBox .price{color: #f60;font-size: 16px;font-family:"Microsoft Yahei";font-weight: normal;}
+.sectionBox .price .nu{color: #f60;}
+.sectionBox .price .symbol{font-size: 12px;color: #f60;}
+.sectionBox .price .word{font-size: 12px;margin-left: -2px;}
+.sectionBox .price .call{ font-size:14px;font-family:"Microsoft Yahei";font-weight: normal;}
+
+/*border*/
+.sectionBorder-A1{border-left: none;border-right:none;}
+.sectionBorder-A2{border-radius: 0;}
+
+/*wrapper*/
+.sectionContainer-A1 .container-fluid{padding: 0;}
+
+.sectionWrap-A1{width: 100%;background-color: #f8f9fa;margin-top: -140px; position: absolute; top: 50%;}
+.sectionWrap-A1 .border{border: none; border-top: 1px solid #d7d7d7;border-bottom: 1px solid #d7d7d7; }
+.sectionWrap-A1 .p10{padding: 50px 0;padding-left: 300px;}
+
+.sectionWrap-A2{background: whitesmoke;height: 100%;border-right: 1px solid #E2E2E2;}
+.sectionWrap-A2 .p10{}
+
+.sectionWrap-A3{height: 100%;overflow-y: auto;}
+.sectionWrap-A3 iframe{width: 100%;height: 100%;}
+.sectionWrap-A3.span10{padding-right: 15px;margin-left: 20px;}
+.sectionWrap-A3.span14{padding-right: 15px;margin-left: 20px;}
+
+.sectionWrap-A4{}
+
+/*icon*/
+.sectionIcon-A1{position: relative;}
+.sectionIcon-A1 i{width: 76px;height: 75px;position: absolute;top: -6px;right: -6px;z-index: 1000;}
+.sectionIcon-A1 .icon{cursor: pointer;}
+
+
+
+
+/*浮动*/
+.sectionFloat-A1{position:relative;}
+.sectionFloat-A1 ul{}
+.sectionFloat-A1 li{float:left;_display: inline;}
+.sectionFloat-A1 li.R{float:right;}
+
+
+
+/*头部*/
+.sectionHeader-A1{height: 90px; border-bottom: 3px solid #3C5880;}
+
+/*顶部*/
+.sectionTop-A1{height: 46px;line-height: 46px; text-align: right;background:url(../images/title_bg.png) repeat-x 0 0; position: relative;z-index: 10;color: #565656;}
+.sectionTop-A1 a{color: #565656;}
+.sectionTop-A1 span{margin: 0 5px;}
+
+/*导航条*/
+.sectionNav-A1{position: relative;}
+.sectionNav-A1 ul{position: absolute;left: 160px;top: 54px;}
+.sectionNav-A1 li{margin-right: 10px;text-align: center;height: 36px;line-height: 36px;}
+.sectionNav-A1 a{color: #3B5999;display: block;padding: 0 15px;font-size: 14px;font-weight: bold;}
+.sectionNav-A1 .cur{background:#3B5999;}
+.sectionNav-A1 .cur a{color: #fff;}
+
+.sectionNav-A2{position: absolute;right: 10px;top: 10px;}
+.sectionNav-A2 img{vertical-align: -3px;}
+.sectionNav-A2 a{}
+.sectionNav-A2 .welcome{font-size: 14px;}
+.sectionNav-A2 .mr10{margin-right: 5px;}
+
+/*Logo*/
+.sectionLogo-A1{position: relative;top: 30px;left: 100px;}
+.sectionLogo-A1-1{position: absolute;top:0;left: 0;}
+
+
+/*Tel*/
+.sectionTel-A1{}
+
+
+/*脚部*/
+.sectionFoot-A1{color: #949494;text-align: center;}
+.sectionFoot-A1 a{color: #A6B6CE;}
+
+
+.sectionFoot-B1{border-bottom: 1px solid #eee;}
+.sectionFoot-B1 .ml8{margin-left: 8px;}
+.sectionFoot-B1 .checkbox{position: relative;top: 3px;}
+
+/* 友情链接 */
+.sectionLinks-A1{}
+
+
+
+/*Menu*/
+.sectionMenu-A1{}
+.sectionMenu-A1 li{height: 30px;line-height: 30px;text-align: center;}
+.sectionMenu-A1 a{display: block;color:#3C5880; }
+.sectionMenu-A1 .cur a{background: #3C5880;color: #fff;font-weight: bold;}
+.sectionMenu-A1 a:hover{background: #DCE0E1;font-weight: bold;}
+.sectionMenu-A1 .cur a:hover{background: #3C5880;}
+
+/*Title*/
+.sectionTitle-A,
+.sectionTitle-A h2,
+.sectionTitle-A .more{height: 29px;line-height: 29px;}
+.sectionTitle-A{position: relative;}
+.sectionTitle-A h2{color: #333;font-size: 14px;font-family:"Microsoft Yahei";}
+.sectionTitle-A .more{right:25px; top:0;background-position: 0 0;}
+
+.sectionTitle-A1{}
+
+
+/*slider*/
+.sectionSlider-A1{}
+
+.sectionSliderButton-A1{width:92px;height:18px;position:absolute;top:auto;right:5px;left:auto;bottom:10px;z-index:100;}
+.sectionSliderButton-A1 li{height:18px;width:18px;overflow:hidden;float:left;display: inline; cursor:pointer;margin-right:5px;text-align:center;line-height:18px;background:#fff;color:#000;font-weight:bold;}
+.sectionSliderButton-A1 li.current{background:#f60;color:#fff;}
+
+/*lists*/
+.sectionList-A1 li{height: 26px; line-height:26px; background:url(../images/li.png) 0 12px no-repeat; padding-left:12px; }
+.sectionList-A1 a{color: #333;font-size: 12px;}
+.sectionList-A1 .date{color: #999;font-size: 12px;}
+.sectionList-A1 a:hover{}
+
+.sectionList-B1{}
+.sectionList-B1 ul{}
+.sectionList-B1 li{position: relative;}
+
+/*searchBox*/
+.sectionSearch-A1{} 
+
+
+.sectionLabel-A1{font-size: 12px;font-weight: bold;color: #666;text-align: left;padding-left: 5px;} 
+
+
+
+
+/*表单*/
+.sectionForm-A1{font-family:"SimSun";color: #333;}
+.sectionForm-A1 ul{*margin-bottom: 10px;}
+.sectionForm-A1 li{position: relative;line-height: 25px;}
+.sectionForm-A1 label{color: #333;font-size: 12px;text-align: right;margin-right: 5px;}
+.sectionForm-A1 label .warning{color: #f00;margin: 0;}
+.sectionForm-A1 .text{width: 150px; height: 25px;line-height: 25px;padding: 0 5px;color: #333; vertical-align:middle;font-size:12px;border: 1px solid #ccc;}
+.sectionForm-A1 .long{width: 370px;}
+.sectionForm-A1 .short{width: 60px;}
+.sectionForm-A1 .radio{}
+.sectionForm-A1 .radio span{margin-right: 5px;color: #333;font-size: 12px;}
+.sectionForm-A1 textarea{width: 490px;border: 1px solid #ccc;font-size: 12px;padding: 10px;color: #999;}
+.sectionForm-A1 select{width: 165px;padding: 3px 2px; font-size:12px;border: 1px solid #ccc;}
+.sectionForm-A1 option{height: 25px; line-height: 25px;}
+.sectionForm-A1 .warning{color: #cc0000;margin:0 5px;}
+.sectionForm-A1 .message{color: #888;}
+.sectionForm-A1 .date{}
+.sectionForm-A1 .date span{margin: 0 5px;}
+.sectionForm-A1 .yzm .text{width: 45px; }
+.sectionForm-A1 .yzm img{margin-top: 2px;}
+.sectionForm-A1 .checkbox input{position: relative;top: 3px;}
+
+.sectionForm-A1-1 label{width: 60px;margin-right: 10px;color: #949494;font-size: 12px;}
+.sectionForm-A1-1 a{color: #859BBC;font-size: 12px;} 
+.sectionForm-A1-1 .yzm img{margin:0;}
+
+
+.sectionForm-A1-2 li{padding: 0 0 0 20px;overflow: hidden;}
+.sectionForm-A1-2 li input{font-size:14px;}
+.sectionForm-A1-2 label{float: left;display: block;margin-right: 10px;font-size: 14px;_padding: 5px 0 1px;line-height: 25px;}
+.sectionForm-A1-2 .text{}
+.sectionForm-A1-2 .button{position: relative;top: -2px;}
+.sectionForm-A1-2 .button .btn{width:61px;font-size: 14px;padding: 5px;cursor: pointer;}
+
+.sectionForm-A1-3 select,
+.sectionForm-A1-3 .span1{width: 85px;}
+
+.sectionForm-A1-4 .input-small{position: relative;top: 2px; width: 40px;height: 10px;line-height: 10px; border: 1px solid #ccc;border-radius: 0;}
+
+
+/*内容*/
+.sectionContext-A1{}
+
+
+/*消息*/
+.sectionMessage-A1{top:-55px;left: 260px;}
+
+/*表格*/
+.sectionTable-A1{border-bottom: 1px solid #eee;}
+.sectionTable-A1 thead{background: #eef3f7; height: 30px; line-height: 25px; padding-left: 5px; border-bottom: #d5dfe8 1px solid; border-top: #d5dfe8 1px solid; font-weight: bold;}
+
+
+
+/*地图*/
+.sectionMap-A1{}
+
+
+/*分页*/
+.sectionPageing-A1{text-align:right; }
+.sectionPageing-A1 span{display:inline-block;*display:inline;zoom:1;font-size:12px;background:#fff;padding:1px 6px;margin-left:3px; }
+.sectionPageing-A1 span.current{color:#fff;font-weight:bold;background:#2e6ab1;border:1px solid #ddd; }
+.sectionPageing-A1 .border{border:1px solid #c3c3c3;}
+
+
+/*当前位置*/
+.sectionCrumb-A1{height: 30px; line-height:30px;font-size:12px;position:relative;}
+.sectionCrumb-A1 ul{padding: 0 10px;}
+.sectionCrumb-A1 .border{border-color: #ccc;padding:5px;}
+.sectionCrumb-A1 li{_display: inline; float:left;margin-right:3px;}
+.sectionCrumb-A1 li,
+.sectionCrumb-A1 li a{font-family:"SimSun";color: #de8fa0;}
+
+
+
+/*background*/
+.sectionBg-A1{}
+
+
+/*cms 规定的格式*/
+.sectionCms-A1,
+.sectionCms-A1 p{}
+
+/*button*/
+.sectionBun-A1{margin-left: 125px;width: 150px;}
+.sectionBun-A1 button{padding-left:20px;padding-right: 20px;}
+
+.sectionBun-A2{}
+.sectionBun-A2 .btn{border-radius: 0;background: #51B148;font-size: 14px;padding: 5px 18px;opacity:1;border:none;color: #fff;}
+
+/*模块*/
+.sectionBox-A1{border-top: 1px solid #eee;border-bottom: 1px solid #eee;padding:5px;}
+.sectionBox-A1 em{position: relative;top: 3px;color: #666;font-size: 12px;}
+.sectionBox-A1 .L{float: left!important;}
+.sectionBox-A1 .R{float: right!important;}
+
+.sectionBox-A1-1{border-top: none;}
+
+.top3{position: relative;top: 3px;}
+
+
+
+
+
