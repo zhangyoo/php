@@ -1,22 +1,5 @@
-/*
-Navicat MySQL Data Transfer
-
-Source Server         : localhost
-Source Server Version : 50617
-Source Host           : localhost:3306
-Source Database       : fl
-
-Target Server Type    : MYSQL
-Target Server Version : 50617
-File Encoding         : 65001
-
-Date: 2016-05-30 18:02:40
-*/
-
-SET FOREIGN_KEY_CHECKS=0;
-
 -- ----------------------------
--- Table structure for fl_admanage
+-- 广告表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_admanage`;
 CREATE TABLE `fl_admanage` (
@@ -37,7 +20,7 @@ CREATE TABLE `fl_admanage` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_admin
+-- 后台管理员表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_admin`;
 CREATE TABLE `fl_admin` (
@@ -55,7 +38,7 @@ CREATE TABLE `fl_admin` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_admingroup
+-- 管理员分组表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_admingroup`;
 CREATE TABLE `fl_admingroup` (
@@ -68,7 +51,7 @@ CREATE TABLE `fl_admingroup` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_adminnotes
+-- 系统管理员记事表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_adminnotes`;
 CREATE TABLE `fl_adminnotes` (
@@ -80,7 +63,7 @@ CREATE TABLE `fl_adminnotes` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_adminprivacy
+-- 分组级别权限表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_adminprivacy`;
 CREATE TABLE `fl_adminprivacy` (
@@ -92,7 +75,7 @@ CREATE TABLE `fl_adminprivacy` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_adtype
+-- 广告类型表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_adtype`;
 CREATE TABLE `fl_adtype` (
@@ -109,7 +92,7 @@ CREATE TABLE `fl_adtype` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_cascade
+-- 级联组表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_cascade`;
 CREATE TABLE `fl_cascade` (
@@ -121,7 +104,7 @@ CREATE TABLE `fl_cascade` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_cascadedata
+-- 级联组数据表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_cascadedata`;
 CREATE TABLE `fl_cascadedata` (
@@ -135,7 +118,7 @@ CREATE TABLE `fl_cascadedata` (
 ) ENGINE=MyISAM AUTO_INCREMENT=20020 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_diyfield
+-- 自定义字段表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_diyfield`;
 CREATE TABLE `fl_diyfield` (
@@ -156,7 +139,7 @@ CREATE TABLE `fl_diyfield` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_diymenu
+-- 自定义菜单表(用于非超级管理员登录后台菜单的显示)
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_diymenu`;
 CREATE TABLE `fl_diymenu` (
@@ -171,7 +154,7 @@ CREATE TABLE `fl_diymenu` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_diymodel
+-- 自定义模型表(目前系统有单页、列表、图片、下载、商品)
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_diymodel`;
 CREATE TABLE `fl_diymodel` (
@@ -186,7 +169,7 @@ CREATE TABLE `fl_diymodel` (
 ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_failedlogin
+-- 失败登录记录表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_failedlogin`;
 CREATE TABLE `fl_failedlogin` (
@@ -199,7 +182,7 @@ CREATE TABLE `fl_failedlogin` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_fragment
+-- 碎片数据表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_fragment`;
 CREATE TABLE `fl_fragment` (
@@ -213,7 +196,7 @@ CREATE TABLE `fl_fragment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_getmode
+-- 货到方式表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_getmode`;
 CREATE TABLE `fl_getmode` (
@@ -225,7 +208,7 @@ CREATE TABLE `fl_getmode` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goods
+-- 商品表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goods`;
 CREATE TABLE `fl_goods` (
@@ -271,7 +254,7 @@ CREATE TABLE `fl_goods` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goodsattr
+-- 商品属性表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goodsattr`;
 CREATE TABLE `fl_goodsattr` (
@@ -284,7 +267,7 @@ CREATE TABLE `fl_goodsattr` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goodsbrand
+-- 商品品牌表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goodsbrand`;
 CREATE TABLE `fl_goodsbrand` (
@@ -300,7 +283,7 @@ CREATE TABLE `fl_goodsbrand` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goodsflag
+-- 商品标签表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goodsflag`;
 CREATE TABLE `fl_goodsflag` (
@@ -312,7 +295,7 @@ CREATE TABLE `fl_goodsflag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goodsorder
+-- 商品订单表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goodsorder`;
 CREATE TABLE `fl_goodsorder` (
@@ -348,7 +331,7 @@ CREATE TABLE `fl_goodsorder` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_goodstype
+-- 商品分类表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_goodstype`;
 CREATE TABLE `fl_goodstype` (
@@ -364,7 +347,7 @@ CREATE TABLE `fl_goodstype` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_info
+-- 单页信息表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_info`;
 CREATE TABLE `fl_info` (
@@ -378,7 +361,7 @@ CREATE TABLE `fl_info` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_infoclass
+-- 信息分类表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_infoclass`;
 CREATE TABLE `fl_infoclass` (
@@ -401,7 +384,7 @@ CREATE TABLE `fl_infoclass` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_infoflag
+-- 信息标签表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_infoflag`;
 CREATE TABLE `fl_infoflag` (
@@ -413,7 +396,7 @@ CREATE TABLE `fl_infoflag` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_infoimg
+-- 图片信息表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_infoimg`;
 CREATE TABLE `fl_infoimg` (
@@ -447,7 +430,7 @@ CREATE TABLE `fl_infoimg` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_infolist
+-- 列表信息表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_infolist`;
 CREATE TABLE `fl_infolist` (
@@ -481,7 +464,7 @@ CREATE TABLE `fl_infolist` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_infosrc
+-- 信息来源表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_infosrc`;
 CREATE TABLE `fl_infosrc` (
@@ -493,7 +476,7 @@ CREATE TABLE `fl_infosrc` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_job
+-- 招聘表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_job`;
 CREATE TABLE `fl_job` (
@@ -518,7 +501,7 @@ CREATE TABLE `fl_job` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_lnk
+-- 快捷菜单表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_lnk`;
 CREATE TABLE `fl_lnk` (
@@ -531,7 +514,7 @@ CREATE TABLE `fl_lnk` (
 ) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_maintype
+-- 二级类别表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_maintype`;
 CREATE TABLE `fl_maintype` (
@@ -546,7 +529,7 @@ CREATE TABLE `fl_maintype` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_member
+-- 用户表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_member`;
 CREATE TABLE `fl_member` (
@@ -597,7 +580,7 @@ CREATE TABLE `fl_member` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_message
+-- 留言表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_message`;
 CREATE TABLE `fl_message` (
@@ -618,7 +601,7 @@ CREATE TABLE `fl_message` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_nav
+-- 导航菜单表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_nav`;
 CREATE TABLE `fl_nav` (
@@ -637,7 +620,7 @@ CREATE TABLE `fl_nav` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_paymode
+-- 支付方式表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_paymode`;
 CREATE TABLE `fl_paymode` (
@@ -649,7 +632,7 @@ CREATE TABLE `fl_paymode` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_postmode
+-- 配送方式表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_postmode`;
 CREATE TABLE `fl_postmode` (
@@ -662,7 +645,7 @@ CREATE TABLE `fl_postmode` (
 ) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_site
+-- 站点表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_site`;
 CREATE TABLE `fl_site` (
@@ -674,7 +657,7 @@ CREATE TABLE `fl_site` (
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_soft
+-- 软件下载表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_soft`;
 CREATE TABLE `fl_soft` (
@@ -718,7 +701,7 @@ CREATE TABLE `fl_soft` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_sysevent
+-- 系统操作日志表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_sysevent`;
 CREATE TABLE `fl_sysevent` (
@@ -734,7 +717,7 @@ CREATE TABLE `fl_sysevent` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_uploads
+-- 上传文件表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_uploads`;
 CREATE TABLE `fl_uploads` (
@@ -748,7 +731,7 @@ CREATE TABLE `fl_uploads` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_usercomment
+-- 用户评论表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_usercomment`;
 CREATE TABLE `fl_usercomment` (
@@ -767,7 +750,7 @@ CREATE TABLE `fl_usercomment` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_userfavorite
+-- 用户收藏表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_userfavorite`;
 CREATE TABLE `fl_userfavorite` (
@@ -784,7 +767,7 @@ CREATE TABLE `fl_userfavorite` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_usergroup
+-- 用户等级表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_usergroup`;
 CREATE TABLE `fl_usergroup` (
@@ -798,7 +781,7 @@ CREATE TABLE `fl_usergroup` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_vote
+-- 投票表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_vote`;
 CREATE TABLE `fl_vote` (
@@ -819,7 +802,7 @@ CREATE TABLE `fl_vote` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_votedata
+-- 用户投票关联表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_votedata`;
 CREATE TABLE `fl_votedata` (
@@ -833,7 +816,7 @@ CREATE TABLE `fl_votedata` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_voteoption
+-- 投票选项表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_voteoption`;
 CREATE TABLE `fl_voteoption` (
@@ -844,7 +827,7 @@ CREATE TABLE `fl_voteoption` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_webconfig
+-- 网站配置表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_webconfig`;
 CREATE TABLE `fl_webconfig` (
@@ -859,7 +842,7 @@ CREATE TABLE `fl_webconfig` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_weblink
+-- 友情链接表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_weblink`;
 CREATE TABLE `fl_weblink` (
@@ -879,7 +862,7 @@ CREATE TABLE `fl_weblink` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for fl_weblinktype
+-- 友情链接类型表
 -- ----------------------------
 DROP TABLE IF EXISTS `fl_weblinktype`;
 CREATE TABLE `fl_weblinktype` (
