@@ -1,0 +1,894 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50617
+Source Host           : localhost:3306
+Source Database       : fl
+
+Target Server Type    : MYSQL
+Target Server Version : 50617
+File Encoding         : 65001
+
+Date: 2016-05-30 18:02:40
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for fl_admanage
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_admanage`;
+CREATE TABLE `fl_admanage` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '信息id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '投放范围(广告位)',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属广告位父id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属广告位父id字符串',
+  `title` varchar(30) NOT NULL COMMENT '广告标识',
+  `admode` char(10) NOT NULL COMMENT '展示模式',
+  `picurl` varchar(100) NOT NULL COMMENT '上传内容地址',
+  `adtext` text NOT NULL COMMENT '展示内容',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_admin
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_admin`;
+CREATE TABLE `fl_admin` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '信息id',
+  `username` varchar(30) NOT NULL COMMENT '用户名',
+  `password` char(32) NOT NULL COMMENT '密码',
+  `nickname` char(32) NOT NULL COMMENT '昵称',
+  `question` tinyint(1) unsigned NOT NULL COMMENT '登录提问',
+  `answer` varchar(50) NOT NULL COMMENT '登录回答',
+  `levelname` tinyint(1) unsigned NOT NULL COMMENT '级别',
+  `checkadmin` enum('true','false') NOT NULL COMMENT '审核',
+  `loginip` char(20) NOT NULL COMMENT '登录IP',
+  `logintime` int(10) unsigned NOT NULL COMMENT '登录时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_admingroup
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_admingroup`;
+CREATE TABLE `fl_admingroup` (
+  `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT COMMENT '管理组id',
+  `groupname` varchar(30) NOT NULL COMMENT '管理组名称',
+  `description` text NOT NULL COMMENT '管理组描述',
+  `groupsite` varchar(30) NOT NULL COMMENT '默认进入站',
+  `checkinfo` set('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_adminnotes
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_adminnotes`;
+CREATE TABLE `fl_adminnotes` (
+  `uname` varchar(30) NOT NULL COMMENT '用户名',
+  `body` mediumtext NOT NULL COMMENT '便签内容',
+  `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
+  `postip` varchar(30) NOT NULL COMMENT '提交IP',
+  PRIMARY KEY (`uname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_adminprivacy
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_adminprivacy`;
+CREATE TABLE `fl_adminprivacy` (
+  `groupid` tinyint(3) unsigned NOT NULL COMMENT '所属管理组id',
+  `siteid` tinyint(1) unsigned NOT NULL COMMENT '站点id',
+  `model` varchar(30) NOT NULL COMMENT '管理模块',
+  `classid` int(10) NOT NULL COMMENT '类型id',
+  `action` varchar(10) NOT NULL COMMENT '可执行操作'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_adtype
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_adtype`;
+CREATE TABLE `fl_adtype` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '广告位id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '上级id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '广告位名称',
+  `width` smallint(5) unsigned NOT NULL COMMENT '广告位宽度',
+  `height` smallint(5) unsigned NOT NULL COMMENT '广告位高度',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_cascade
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_cascade`;
+CREATE TABLE `fl_cascade` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '级联组id',
+  `groupname` varchar(30) NOT NULL COMMENT '级联组名称',
+  `groupsign` varchar(30) NOT NULL COMMENT '级联组标识',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_cascadedata
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_cascadedata`;
+CREATE TABLE `fl_cascadedata` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '级联数据id',
+  `dataname` char(30) NOT NULL COMMENT '级联数据名称',
+  `datavalue` char(20) NOT NULL COMMENT '级联数据值',
+  `datagroup` char(20) NOT NULL COMMENT '所属级联组',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `level` tinyint(1) unsigned NOT NULL COMMENT '级联数据层次',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20020 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_diyfield
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_diyfield`;
+CREATE TABLE `fl_diyfield` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '自定义字段id',
+  `infotype` tinyint(1) unsigned NOT NULL COMMENT '所属模型',
+  `catepriv` varchar(255) NOT NULL COMMENT '所属栏目',
+  `fieldname` varchar(30) NOT NULL COMMENT '字段名称',
+  `fieldtitle` varchar(30) NOT NULL COMMENT '字段标题',
+  `fielddesc` varchar(255) NOT NULL COMMENT '字段提示',
+  `fieldtype` varchar(30) NOT NULL COMMENT '字段类型',
+  `fieldlong` varchar(10) NOT NULL COMMENT '字段长度',
+  `fieldsel` varchar(255) NOT NULL COMMENT '字段选项值',
+  `fieldcheck` varchar(80) NOT NULL COMMENT '校验正则',
+  `fieldcback` varchar(30) NOT NULL COMMENT '未通过提示',
+  `orderid` smallint(6) NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_diymenu
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_diymenu`;
+CREATE TABLE `fl_diymenu` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '自定义菜单id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属菜单id',
+  `classname` varchar(30) NOT NULL COMMENT '菜单项名称',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_diymodel
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_diymodel`;
+CREATE TABLE `fl_diymodel` (
+  `id` smallint(6) unsigned NOT NULL AUTO_INCREMENT COMMENT '自定义模型id',
+  `modeltitle` varchar(30) NOT NULL COMMENT '模型标题',
+  `modelname` varchar(30) NOT NULL COMMENT '模型名称',
+  `modeltbname` varchar(30) NOT NULL COMMENT '模型表名',
+  `defaultfield` varchar(80) NOT NULL COMMENT '预设栏目',
+  `orderid` smallint(6) NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_failedlogin
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_failedlogin`;
+CREATE TABLE `fl_failedlogin` (
+  `username` char(30) NOT NULL COMMENT '用户名',
+  `ip` char(15) NOT NULL COMMENT '登录IP',
+  `time` int(10) unsigned NOT NULL COMMENT '登录时间',
+  `num` tinyint(1) NOT NULL COMMENT '失败次数',
+  `isadmin` tinyint(1) NOT NULL COMMENT '是否是管理员',
+  PRIMARY KEY (`username`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_fragment
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_fragment`;
+CREATE TABLE `fl_fragment` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '碎片数据id',
+  `title` varchar(30) NOT NULL COMMENT '碎片数据名称',
+  `picurl` varchar(80) NOT NULL COMMENT '碎片数据缩略图',
+  `linkurl` varchar(80) NOT NULL COMMENT '碎片数据连接',
+  `content` mediumtext NOT NULL COMMENT '碎片数据内容',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_getmode
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_getmode`;
+CREATE TABLE `fl_getmode` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '货到方式id',
+  `classname` varchar(30) NOT NULL COMMENT '货到方式名称',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goods`;
+CREATE TABLE `fl_goods` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属栏目',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属栏目父id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属栏目父id字符串',
+  `typeid` smallint(5) unsigned NOT NULL COMMENT '商品分类',
+  `typepid` smallint(5) unsigned NOT NULL COMMENT '商品分类父id',
+  `typepstr` varchar(80) NOT NULL COMMENT '商品分类父id字符串',
+  `brandid` smallint(5) NOT NULL COMMENT '商品品牌id',
+  `brandpid` smallint(5) NOT NULL COMMENT '品牌上级id',
+  `brandpstr` varchar(80) NOT NULL COMMENT '品牌上级id字符串',
+  `title` varchar(80) NOT NULL COMMENT '商品名称',
+  `colorval` char(10) NOT NULL COMMENT '标题颜色',
+  `boldval` char(10) NOT NULL COMMENT '标题加粗',
+  `flag` varchar(30) NOT NULL COMMENT '属性',
+  `goodsid` varchar(30) NOT NULL COMMENT '货号',
+  `payfreight` enum('0','1') NOT NULL COMMENT '运费承担',
+  `weight` varchar(10) NOT NULL COMMENT '重量',
+  `attrstr` text NOT NULL COMMENT '属性字符串',
+  `marketprice` char(10) NOT NULL COMMENT '市场价格',
+  `salesprice` char(10) NOT NULL COMMENT '销售价格',
+  `housenum` smallint(5) unsigned NOT NULL COMMENT '库存数量',
+  `housewarn` enum('true','false') NOT NULL COMMENT '库存警告',
+  `warnnum` smallint(5) unsigned NOT NULL COMMENT '警告数量',
+  `integral` char(10) NOT NULL COMMENT '积分点数',
+  `source` varchar(50) NOT NULL COMMENT '文章来源',
+  `author` varchar(50) NOT NULL COMMENT '作者编辑',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `keywords` varchar(30) NOT NULL COMMENT '关键词',
+  `description` varchar(255) NOT NULL COMMENT '摘要',
+  `content` mediumtext NOT NULL COMMENT '详细内容',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `picarr` text NOT NULL COMMENT '组图',
+  `hits` int(10) unsigned NOT NULL COMMENT '点击次数',
+  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  `delstate` set('true') NOT NULL COMMENT '删除状态',
+  `deltime` int(10) NOT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goodsattr
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goodsattr`;
+CREATE TABLE `fl_goodsattr` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品属性id',
+  `goodsid` smallint(5) unsigned NOT NULL COMMENT '所属分类',
+  `attrname` varchar(30) NOT NULL COMMENT '属性名称',
+  `orderid` mediumint(8) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goodsbrand
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goodsbrand`;
+CREATE TABLE `fl_goodsbrand` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品品牌id',
+  `parentid` mediumint(8) unsigned NOT NULL COMMENT '品牌上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '品牌上级id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '品牌名称',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `orderid` mediumint(10) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goodsflag
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goodsflag`;
+CREATE TABLE `fl_goodsflag` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品标记id',
+  `flag` varchar(30) NOT NULL COMMENT '标记名称',
+  `flagname` varchar(30) NOT NULL COMMENT '标记标识',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goodsorder
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goodsorder`;
+CREATE TABLE `fl_goodsorder` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品订单id',
+  `username` varchar(30) NOT NULL COMMENT '会员用户名',
+  `attrstr` text NOT NULL COMMENT '商品列表',
+  `truename` varchar(30) NOT NULL COMMENT '收货人姓名',
+  `telephone` varchar(30) NOT NULL COMMENT '电话',
+  `idcard` varchar(30) NOT NULL COMMENT '证件号码',
+  `zipcode` varchar(30) NOT NULL COMMENT '邮编',
+  `postarea_prov` varchar(10) NOT NULL COMMENT '配送地区_省',
+  `postarea_city` varchar(10) NOT NULL COMMENT '配送地区_市',
+  `postarea_country` varchar(10) NOT NULL COMMENT '配送地区_县',
+  `address` varchar(80) NOT NULL COMMENT '地址',
+  `postmode` smallint(5) NOT NULL COMMENT '配送方式',
+  `paymode` smallint(5) NOT NULL COMMENT '支付方式',
+  `getmode` smallint(5) NOT NULL COMMENT '货到方式',
+  `ordernum` varchar(30) NOT NULL COMMENT '订单号',
+  `postid` varchar(30) NOT NULL COMMENT '运单号',
+  `weight` varchar(10) NOT NULL COMMENT '物品重量',
+  `cost` varchar(10) NOT NULL COMMENT '商品运费',
+  `amount` varchar(10) NOT NULL COMMENT '订单金额',
+  `integral` smallint(5) unsigned NOT NULL COMMENT '积分点数',
+  `buyremark` text NOT NULL COMMENT '购物备注',
+  `sendremark` text NOT NULL COMMENT '发货方备注',
+  `posttime` int(10) unsigned NOT NULL COMMENT '订单时间',
+  `orderid` mediumint(10) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` varchar(255) NOT NULL COMMENT '审核状态',
+  `core` set('true') NOT NULL COMMENT '是否加星',
+  `delstate` set('true') NOT NULL COMMENT '删除状态',
+  `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_goodstype
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_goodstype`;
+CREATE TABLE `fl_goodstype` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '商品类型id',
+  `parentid` mediumint(8) unsigned NOT NULL COMMENT '类型上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '类型上级id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '类别名称',
+  `picurl` varchar(255) DEFAULT NULL COMMENT '缩略图片',
+  `linkurl` varchar(255) DEFAULT NULL COMMENT '跳转链接',
+  `orderid` mediumint(8) unsigned NOT NULL COMMENT '排列顺序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '隐藏类别',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_info
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_info`;
+CREATE TABLE `fl_info` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '单页id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属栏目id',
+  `mainid` smallint(5) NOT NULL COMMENT '二级类别id',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `content` mediumtext NOT NULL COMMENT '内容',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_infoclass
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_infoclass`;
+CREATE TABLE `fl_infoclass` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '栏目id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '栏目上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '栏目上级id字符串',
+  `infotype` tinyint(1) unsigned NOT NULL COMMENT '栏目类型',
+  `classname` varchar(30) NOT NULL COMMENT '栏目名称',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `picwidth` varchar(5) NOT NULL COMMENT '缩略图宽度',
+  `picheight` varchar(5) NOT NULL COMMENT '缩略图高度',
+  `seotitle` varchar(80) NOT NULL COMMENT 'SEO标题',
+  `keywords` varchar(50) NOT NULL COMMENT '关键词',
+  `description` varchar(255) NOT NULL COMMENT '描述',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_infoflag
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_infoflag`;
+CREATE TABLE `fl_infoflag` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '信息标记id',
+  `flag` varchar(30) NOT NULL COMMENT '标记名称',
+  `flagname` varchar(30) NOT NULL COMMENT '标记标识',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_infoimg
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_infoimg`;
+CREATE TABLE `fl_infoimg` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '图片信息id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属栏目id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属栏目上级id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属栏目上级id字符串',
+  `mainid` smallint(5) NOT NULL COMMENT '二级类别id',
+  `mainpid` smallint(5) NOT NULL COMMENT '二级类别父id',
+  `mainpstr` varchar(80) NOT NULL COMMENT '二级累呗父id字符串',
+  `title` varchar(80) NOT NULL COMMENT '标题',
+  `colorval` char(10) NOT NULL COMMENT '字体颜色',
+  `boldval` char(10) NOT NULL COMMENT '字体加粗',
+  `flag` varchar(30) NOT NULL COMMENT '属性',
+  `source` varchar(50) NOT NULL COMMENT '文章来源',
+  `author` varchar(50) NOT NULL COMMENT '作者编辑',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `keywords` varchar(50) NOT NULL COMMENT '关键词',
+  `description` varchar(255) NOT NULL COMMENT '摘要',
+  `content` mediumtext NOT NULL COMMENT '详细内容',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `picarr` text NOT NULL COMMENT '组图',
+  `hits` mediumint(8) unsigned NOT NULL COMMENT '点击次数',
+  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  `delstate` set('true') NOT NULL COMMENT '删除状态',
+  `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_infolist
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_infolist`;
+CREATE TABLE `fl_infolist` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '列表信息id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属栏目id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属栏目上级id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属栏目上级id字符串',
+  `mainid` smallint(5) NOT NULL COMMENT '二级类别id',
+  `mainpid` smallint(5) NOT NULL COMMENT '二级类别上级id',
+  `mainpstr` varchar(80) NOT NULL COMMENT '二级类别上级id字符串',
+  `title` varchar(80) NOT NULL COMMENT '标题',
+  `colorval` char(10) NOT NULL COMMENT '字体颜色',
+  `boldval` char(10) NOT NULL COMMENT '字体加粗',
+  `flag` varchar(30) NOT NULL COMMENT '属性',
+  `source` varchar(50) NOT NULL COMMENT '文章来源',
+  `author` varchar(50) NOT NULL COMMENT '作者编辑',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `keywords` varchar(50) NOT NULL COMMENT '关键词',
+  `description` varchar(255) NOT NULL COMMENT '摘要',
+  `content` mediumtext NOT NULL COMMENT '详细内容',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `picarr` text NOT NULL COMMENT '组图',
+  `hits` mediumint(8) unsigned NOT NULL COMMENT '点击次数',
+  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  `delstate` set('true') NOT NULL COMMENT '删除状态',
+  `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_infosrc
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_infosrc`;
+CREATE TABLE `fl_infosrc` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '来源id',
+  `srcname` varchar(30) NOT NULL COMMENT '来源名称',
+  `linkurl` varchar(80) NOT NULL COMMENT '来源地址',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '来源排序',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_job
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_job`;
+CREATE TABLE `fl_job` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '招聘信息id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `title` varchar(50) NOT NULL COMMENT '位岗名称',
+  `jobplace` varchar(80) NOT NULL COMMENT '工作地点',
+  `jobdescription` varchar(50) NOT NULL COMMENT '工作性质',
+  `employ` smallint(5) unsigned NOT NULL COMMENT '招聘人数',
+  `jobsex` enum('0','1','2') NOT NULL COMMENT '性别要求',
+  `treatment` varchar(50) NOT NULL COMMENT '工资待遇',
+  `usefullife` varchar(50) NOT NULL COMMENT '有效期',
+  `experience` varchar(50) NOT NULL COMMENT '工作经验',
+  `education` varchar(80) NOT NULL COMMENT '学历要求',
+  `joblang` varchar(50) NOT NULL COMMENT '言语能力',
+  `workdesc` mediumtext NOT NULL COMMENT '职位描述',
+  `content` mediumtext NOT NULL COMMENT '职位要求',
+  `orderid` mediumint(8) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_lnk
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_lnk`;
+CREATE TABLE `fl_lnk` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '快捷方式id',
+  `lnkname` varchar(30) NOT NULL COMMENT '快捷方式名称',
+  `lnklink` varchar(50) NOT NULL COMMENT '跳转链接',
+  `lnkico` varchar(50) NOT NULL COMMENT 'ico地址',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_maintype
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_maintype`;
+CREATE TABLE `fl_maintype` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '二级类别id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '类别上级id',
+  `parentstr` varchar(50) NOT NULL COMMENT '类别上级id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '类别名称',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_member
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_member`;
+CREATE TABLE `fl_member` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户id',
+  `username` varchar(32) NOT NULL COMMENT '用户名',
+  `password` varchar(32) NOT NULL COMMENT '密码',
+  `question` varchar(50) NOT NULL COMMENT '提问',
+  `answer` varchar(50) NOT NULL COMMENT '回答',
+  `cnname` varchar(10) NOT NULL COMMENT '姓名',
+  `enname` varchar(20) NOT NULL COMMENT '英文名',
+  `avatar` varchar(100) NOT NULL COMMENT '头像',
+  `sex` tinyint(1) unsigned NOT NULL COMMENT '性别',
+  `birthtype` tinyint(1) unsigned NOT NULL COMMENT '生日类型',
+  `birth_year` varchar(10) NOT NULL DEFAULT '-1' COMMENT '生日_年',
+  `birth_month` varchar(10) NOT NULL DEFAULT '-1' COMMENT '生日_月',
+  `birth_day` varchar(10) NOT NULL DEFAULT '-1' COMMENT '生日_日',
+  `astro` varchar(10) NOT NULL DEFAULT '-1' COMMENT '星座',
+  `bloodtype` tinyint(2) NOT NULL DEFAULT '-1' COMMENT '血型',
+  `trade` varchar(10) NOT NULL DEFAULT '-1' COMMENT '行业',
+  `live_prov` varchar(10) NOT NULL DEFAULT '-1' COMMENT '现居地_省',
+  `live_city` varchar(10) NOT NULL DEFAULT '-1' COMMENT '现居地_市',
+  `live_country` varchar(15) NOT NULL DEFAULT '-1' COMMENT '现居地_区',
+  `home_prov` varchar(10) NOT NULL DEFAULT '-1' COMMENT '故乡_省',
+  `home_city` varchar(10) NOT NULL DEFAULT '-1' COMMENT '故乡_市',
+  `home_country` varchar(15) NOT NULL DEFAULT '-1' COMMENT '故乡_区',
+  `cardtype` tinyint(2) NOT NULL DEFAULT '-1' COMMENT '证件类型',
+  `cardnum` varchar(32) NOT NULL COMMENT '证件号码',
+  `intro` text NOT NULL COMMENT '个人说明',
+  `email` varchar(40) NOT NULL COMMENT '电子邮件',
+  `qqnum` varchar(20) NOT NULL COMMENT 'QQ号码',
+  `mobile` varchar(20) NOT NULL COMMENT '手机',
+  `telephone` varchar(20) NOT NULL COMMENT '固定电话',
+  `address_prov` varchar(10) NOT NULL DEFAULT '-1' COMMENT '通信地址_省',
+  `address_city` varchar(10) NOT NULL DEFAULT '-1' COMMENT '通信地址_市',
+  `address_country` varchar(15) NOT NULL DEFAULT '-1' COMMENT '通信地址_区',
+  `address` varchar(100) NOT NULL COMMENT '通信地址',
+  `zipcode` varchar(10) NOT NULL COMMENT '邮编',
+  `enteruser` set('1') NOT NULL COMMENT '认证',
+  `expval` int(10) NOT NULL COMMENT '经验值',
+  `integral` int(10) unsigned NOT NULL COMMENT '积分',
+  `regtime` int(10) unsigned NOT NULL COMMENT '注册时间',
+  `regip` varchar(20) NOT NULL COMMENT '注册IP',
+  `logintime` int(10) unsigned NOT NULL COMMENT '登录时间',
+  `loginip` varchar(20) NOT NULL COMMENT '登录IP',
+  `qqid` varchar(32) NOT NULL COMMENT '绑定QQ',
+  `weiboid` varchar(32) NOT NULL COMMENT '绑定微博',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_message
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_message`;
+CREATE TABLE `fl_message` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '留言id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `nickname` varchar(30) NOT NULL COMMENT '昵称',
+  `contact` varchar(50) NOT NULL COMMENT '联系方式',
+  `content` text NOT NULL COMMENT '留言内容',
+  `htop` set('true') NOT NULL COMMENT '置顶',
+  `rtop` set('true') NOT NULL COMMENT '推荐',
+  `ip` char(20) NOT NULL COMMENT '留言IP',
+  `recont` text NOT NULL COMMENT '回复内容',
+  `retime` int(10) unsigned NOT NULL COMMENT '回复时间',
+  `orderid` mediumint(8) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_nav
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_nav`;
+CREATE TABLE `fl_nav` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '导航id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '导航分类',
+  `parentstr` varchar(50) NOT NULL COMMENT '导航分类父id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '导航名称',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `relinkurl` varchar(255) NOT NULL COMMENT '重写地址',
+  `picurl` varchar(100) NOT NULL COMMENT '导航图片',
+  `target` varchar(30) NOT NULL COMMENT '打开方式',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '隐藏导航',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_paymode
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_paymode`;
+CREATE TABLE `fl_paymode` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '支付方式id',
+  `classname` varchar(30) NOT NULL COMMENT '支付方式名称',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_postmode
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_postmode`;
+CREATE TABLE `fl_postmode` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '配送方式id',
+  `classname` varchar(30) NOT NULL COMMENT '配送方式',
+  `postprice` varchar(10) NOT NULL COMMENT '配送价格',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_site
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_site`;
+CREATE TABLE `fl_site` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '站点ID',
+  `sitename` varchar(30) NOT NULL COMMENT '站点名称',
+  `sitekey` varchar(30) NOT NULL COMMENT '站点标识',
+  `sitelang` varchar(50) NOT NULL COMMENT '站点语言包',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_soft
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_soft`;
+CREATE TABLE `fl_soft` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '软件信息id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属栏目id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属栏目上级id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属栏目上级id字符串',
+  `mainid` smallint(5) NOT NULL COMMENT '二级类别id',
+  `mainpid` smallint(5) NOT NULL COMMENT '二级类别父id',
+  `mainpstr` varchar(80) NOT NULL COMMENT '二级累呗父id字符串',
+  `title` varchar(80) NOT NULL COMMENT '标题',
+  `colorval` char(10) NOT NULL COMMENT '字体颜色',
+  `boldval` char(10) NOT NULL COMMENT '字体加粗',
+  `flag` varchar(30) NOT NULL COMMENT '属性',
+  `filetype` char(4) NOT NULL COMMENT '文件类型',
+  `softtype` char(10) NOT NULL COMMENT '软件类型',
+  `language` char(10) NOT NULL COMMENT '界面语言',
+  `accredit` char(10) NOT NULL COMMENT '授权方式',
+  `softsize` varchar(10) NOT NULL COMMENT '软件大小',
+  `unit` char(4) NOT NULL COMMENT '软件大小单位',
+  `runos` varchar(50) NOT NULL COMMENT '运行环境',
+  `website` varchar(255) NOT NULL COMMENT '官方网站',
+  `demourl` varchar(255) NOT NULL COMMENT '演示地址',
+  `dlurl` varchar(255) NOT NULL COMMENT '下载地址',
+  `source` varchar(50) NOT NULL COMMENT '文章来源',
+  `author` varchar(50) NOT NULL COMMENT '作者编辑',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `keywords` varchar(50) NOT NULL COMMENT '关键字',
+  `description` varchar(255) NOT NULL COMMENT '描述',
+  `content` mediumtext NOT NULL COMMENT '内容',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `picarr` text NOT NULL COMMENT '组图',
+  `hits` mediumint(8) unsigned NOT NULL COMMENT '点击次数',
+  `orderid` int(10) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  `delstate` set('true') NOT NULL COMMENT '删除状态',
+  `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_sysevent
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_sysevent`;
+CREATE TABLE `fl_sysevent` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '信息id',
+  `uname` varchar(30) NOT NULL COMMENT '用户名',
+  `siteid` tinyint(1) unsigned NOT NULL COMMENT '站点id',
+  `model` varchar(30) NOT NULL COMMENT '操作模块',
+  `classid` int(10) unsigned NOT NULL COMMENT '栏目id',
+  `action` varchar(10) NOT NULL COMMENT '执行操作',
+  `posttime` int(10) NOT NULL COMMENT '操作时间',
+  `ip` varchar(20) NOT NULL COMMENT '操作ip',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_uploads
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_uploads`;
+CREATE TABLE `fl_uploads` (
+  `id` mediumint(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '上传信息id',
+  `name` varchar(30) NOT NULL COMMENT '文件名称',
+  `path` varchar(100) NOT NULL COMMENT '文件路径',
+  `size` int(10) NOT NULL COMMENT '文件大小',
+  `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
+  `posttime` int(10) NOT NULL COMMENT '上传日期',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_usercomment
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_usercomment`;
+CREATE TABLE `fl_usercomment` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论id',
+  `aid` int(10) unsigned NOT NULL COMMENT '信息id',
+  `molds` tinyint(1) unsigned NOT NULL COMMENT '信息类型',
+  `uid` int(10) unsigned NOT NULL COMMENT '用户id',
+  `uname` varchar(20) NOT NULL COMMENT '用户名',
+  `body` text NOT NULL COMMENT '评论内容',
+  `reply` text NOT NULL COMMENT '回复内容',
+  `link` varchar(200) NOT NULL COMMENT '评论网址',
+  `time` int(10) unsigned NOT NULL COMMENT '评论时间',
+  `ip` varchar(30) NOT NULL COMMENT '评论ip',
+  `isshow` tinyint(1) unsigned NOT NULL COMMENT '是否显示',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_userfavorite
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_userfavorite`;
+CREATE TABLE `fl_userfavorite` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '收藏id',
+  `aid` int(10) unsigned NOT NULL COMMENT '信息id',
+  `molds` tinyint(1) unsigned NOT NULL COMMENT '信息类型',
+  `uid` int(10) unsigned NOT NULL COMMENT '用户id',
+  `uname` varchar(20) NOT NULL COMMENT '用户名',
+  `link` varchar(200) NOT NULL COMMENT '收藏网址',
+  `time` int(10) unsigned NOT NULL COMMENT '评论时间',
+  `ip` varchar(30) NOT NULL COMMENT '评论ip',
+  `isshow` tinyint(1) unsigned NOT NULL COMMENT '是否显示',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_usergroup
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_usergroup`;
+CREATE TABLE `fl_usergroup` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户组id',
+  `groupname` varchar(30) NOT NULL COMMENT '用户组名称',
+  `expvala` int(11) NOT NULL COMMENT '用户组经验介于a',
+  `expvalb` int(11) NOT NULL COMMENT '用户组经验介于b',
+  `stars` int(10) unsigned NOT NULL COMMENT '星星数',
+  `color` varchar(10) NOT NULL COMMENT '头衔颜色',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_vote
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_vote`;
+CREATE TABLE `fl_vote` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '投票id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `title` varchar(30) NOT NULL COMMENT '投票标题',
+  `content` text NOT NULL COMMENT '投票描述',
+  `starttime` int(10) unsigned NOT NULL COMMENT '开始时间',
+  `endtime` int(10) unsigned NOT NULL COMMENT '结束时间',
+  `isguest` enum('true','false') NOT NULL COMMENT '游客投票',
+  `isview` enum('true','false') NOT NULL COMMENT '查看投票',
+  `intval` int(10) unsigned NOT NULL COMMENT '投票间隔',
+  `isradio` tinyint(1) unsigned NOT NULL COMMENT '是否多选',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_votedata
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_votedata`;
+CREATE TABLE `fl_votedata` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '投票数据id',
+  `voteid` smallint(6) unsigned NOT NULL COMMENT '投票id',
+  `optionid` text NOT NULL COMMENT '选票id',
+  `userid` int(10) unsigned NOT NULL COMMENT '投票人id',
+  `posttime` int(10) unsigned NOT NULL COMMENT '投票时间',
+  `ip` varchar(30) NOT NULL COMMENT '投票ip',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_voteoption
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_voteoption`;
+CREATE TABLE `fl_voteoption` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '投票选项id',
+  `voteid` smallint(6) unsigned NOT NULL COMMENT '投票id',
+  `options` varchar(30) NOT NULL COMMENT '投票选项',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_webconfig
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_webconfig`;
+CREATE TABLE `fl_webconfig` (
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `varname` varchar(50) NOT NULL COMMENT '变量名称',
+  `varinfo` varchar(80) NOT NULL COMMENT '参数说明',
+  `vargroup` smallint(5) unsigned NOT NULL COMMENT '所属组',
+  `vartype` char(10) NOT NULL COMMENT '变量类型',
+  `varvalue` text NOT NULL COMMENT '变量值',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  PRIMARY KEY (`varname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_weblink
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_weblink`;
+CREATE TABLE `fl_weblink` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '友情链接id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `classid` smallint(5) unsigned NOT NULL COMMENT '所属类别id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '所属类别父id',
+  `parentstr` varchar(80) NOT NULL COMMENT '所属类别父id字符串',
+  `webname` varchar(30) NOT NULL COMMENT '网站名称',
+  `webnote` varchar(200) NOT NULL COMMENT '网站描述',
+  `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
+  `linkurl` varchar(255) NOT NULL COMMENT '跳转链接',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
+  `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for fl_weblinktype
+-- ----------------------------
+DROP TABLE IF EXISTS `fl_weblinktype`;
+CREATE TABLE `fl_weblinktype` (
+  `id` smallint(5) unsigned NOT NULL AUTO_INCREMENT COMMENT '友情链接类型id',
+  `siteid` smallint(5) unsigned NOT NULL DEFAULT '1' COMMENT '站点id',
+  `parentid` smallint(5) unsigned NOT NULL COMMENT '类别父id',
+  `parentstr` varchar(50) NOT NULL COMMENT '类别父id字符串',
+  `classname` varchar(30) NOT NULL COMMENT '类别名称',
+  `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
+  `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
