@@ -1,0 +1,46 @@
+/*头部*/
+header{margin: 0 auto;width: 1200px;}
+.top{width: 1200px;position:absolute;top:0;z-index: 10;background: #ffffff}
+.logo{float:left;}
+.nav{float: right;}
+.nav li{float:left;line-height: 89px;height:89px;}
+.nav li a{padding: 0 20px;}
+/*banner*/
+.banner{margin: 0 auto;height: 518px;overflow: hidden;background:url(../images/banner_01.gif) no-repeat center center}
+.banner_content{position:relative;width: 1396px;margin: 0 auto;}
+.banner_hover{background: #000000;bottom: 0;left:98px;opacity: 0.6;position: absolute;width: 1200px;z-index: 2;}
+.banner_hover_left{float: left;padding: 60px 0 0 20px;}
+.banner_hover_right{float: right;padding: 20px 40px;}
+.banner_hover_right p{text-align: center;color: #ffffff}
+
+.main{margin: 0 auto;width: 1200px;}
+.product_list{margin-top: 10px;}
+.product_list li{float: left;display: inline-block}
+.product_list li img{width: 236px;height: 147px;}
+.product_list li p.pro_title{margin: 40px 0 0 20px;height: 40px;line-height: 40px;}
+.product_list li p.click_more_description{line-height: 20px;}
+.product_list li p.click_more_icon{margin-top: 20px;}
+
+.news_about_mv{margin: 10px auto;width: 1200px;}
+.news_list_index{float: left;padding: 30px 20px 10px 30px;border-right:1px #ccc double}
+.news_list_index .news_list_title{line-height: 30px;font-weight: bold}
+.news_list_index .news_list_decription,.aboutus_index about_description{line-height: 20px;}
+.news_list_index ul{}
+.news_list_index ul li{height: 40px;line-height: 40px;width: 300px;overflow: hidden}
+.news_list_more_icon{float: right;}
+.aboutus_index{padding: 30px;}
+.aboutus_index img{padding: 10px 0}
+.mv_index{float: left}
+
+.company_cooperation{margin: 20px 0;height:57px;background:url(../images/footer_bg_01.gif) repeat-x;text-align: center;line-height:57px }
+
+.footer_banner{margin: 20px auto;width: 1200px;}
+.footer_banner .pre_click{float: left;width: 5%}
+.footer_banner ul{float: left;width: 90%}
+.footer_banner ul li{float: left;padding: 0 20px;}
+.footer_banner ul li p{text-align: center;line-height: 28px;}
+.footer_banner .after_click{float: left;width: 5%}
+
+.footer_center{margin: 0 auto;width: 1200px;}
+.footer_center p{text-align: center;line-height: 30px;}
+.footer_center p a{padding: 0 20px;}
