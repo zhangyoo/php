@@ -1,39 +1,56 @@
+body{background: #E9EAEE}
 /*头部*/
 header{margin: 0 auto;width: 1200px;}
 .top{width: 1200px;position:absolute;top:0;z-index: 10;background: #ffffff}
 .logo{float:left;}
 .nav{float: right;}
 .nav li{float:left;line-height: 89px;height:89px;}
-.nav li a{padding: 0 20px;}
+.nav li a{padding: 0 25px;color:#565656}
 /*banner*/
 .banner{margin: 0 auto;height: 518px;overflow: hidden;background:url(../images/banner_01.gif) no-repeat center center}
-.banner_content{position:relative;width: 1396px;margin: 0 auto;}
-.banner_hover{background: #000000;bottom: 0;left:98px;opacity: 0.6;position: absolute;width: 1200px;z-index: 2;}
-.banner_hover_left{float: left;padding: 60px 0 0 20px;}
-.banner_hover_right{float: right;padding: 20px 40px;}
-.banner_hover_right p{text-align: center;color: #ffffff}
+.banner_content{width: 1396px;margin: 0 auto;}
+.banner_bottom{position:relative;width: 1200px;margin: 0 auto;}
+.banner_hover{width:1200px;height:190px;bottom: 0;position: absolute;z-index: 2;}
+.banner_bottom_bg{width:100%;height:100%;background: #000000;opacity: 0.3;}
+.banner_bottom_content{position:absolute;left:0;bottom:0;width:100%;height:100%;z-index: 3;}
+.banner_hover_left{float: left;padding: 110px 0 0 40px;}
+.banner_hover_left .search_text{width: 715px;line-height: 23px;border:0;padding: 2px;}
+.banner_hover_left .search_submit{width: 31px;height:27px;text-indent: 200px;margin-left: 3px;border:0;background:url(../images/product_04.gif) no-repeat center center}
+.banner_hover_right{float: right;padding: 30px 50px 20px 0;}
+.banner_hover_right p{text-align: center;color: #ffffff;line-height: 1em;}
+.banner_hover_right .number_num{font-size: 30px;}
 
 .main{margin: 0 auto;width: 1200px;}
-.product_list{margin-top: 10px;}
-.product_list li{float: left;display: inline-block}
+.product_list{float: left;padding: 0;margin: 5px 0}
+.product_list li{float: left;display: inline-block;width: 236px;background: #ffffff;margin-right: 5px;}
+.product_list li.last_product_list{margin-right: 0}
 .product_list li img{width: 236px;height: 147px;}
-.product_list li p.pro_title{margin: 40px 0 0 20px;height: 40px;line-height: 40px;}
-.product_list li p.click_more_description{line-height: 20px;}
-.product_list li p.click_more_icon{margin-top: 20px;}
+.product_list li p.pro_title{margin: 30px 15px 15px 25px;height: 40px;line-height: 40px;}
+.product_list li p.click_more_description{line-height: 20px;margin:20px 15px 0 25px;padding-bottom: 25px;border-bottom: 1px solid #EDEDED}
+.product_list li p.click_more_icon{margin: 25px 15px 25px 25px;}
+.product_list li p.click_more_icon a{padding-right: 16px;background:url(../images/more_icon_02.gif) no-repeat right center}
+.product_list li:hover{background: #178CD1;}
+.product_list li:hover p.pro_title{color: #ffffff;background:url(../images/text_bg.gif) no-repeat left bottom}
+.product_list li:hover p.click_more_description{color:#ffffff}
+.product_list li:hover p.click_more_icon a{color:#ffffff;background:url(../images/more_icon.gif) no-repeat right center}
 
-.news_about_mv{margin: 10px auto;width: 1200px;}
-.news_list_index{float: left;padding: 30px 20px 10px 30px;border-right:1px #ccc double}
-.news_list_index .news_list_title{line-height: 30px;font-weight: bold}
+.news_about_mv{float: left;width: 100%;background: #178CD1;color:#ffffff}
+.news_list_index{float: left;width:235px;padding: 30px 25px 10px 40px;border-right:1px #ccc dashed;box-sizing:content-box}
+.news_list_index .news_list_title{line-height: 20px;}
 .news_list_index .news_list_decription,.aboutus_index about_description{line-height: 20px;}
-.news_list_index ul{}
-.news_list_index ul li{height: 40px;line-height: 40px;width: 300px;overflow: hidden}
+.news_list_index ul{padding: 0}
+.news_list_index ul li{line-height: 25px;width: 300px;overflow: hidden}
+.news_list_index ul li a{color: #ffffff}
 .news_list_more_icon{float: right;}
-.aboutus_index{padding: 30px;}
-.aboutus_index img{padding: 10px 0}
-.mv_index{float: left}
+.news_list_more_icon a{color: #ffffff}
+.aboutus_index{float: left;width:230px;padding: 30px 20px 0 40px;box-sizing:content-box}
+.aboutus_index img{padding: 5px 0}
+.mv_index{float: right}
 
-.company_cooperation{margin: 20px 0;height:57px;background:url(../images/footer_bg_01.gif) repeat-x;text-align: center;line-height:57px }
+.company_cooperation{float: left;margin: 45px 0;width:100%;height:57px;background:url(../images/footer_bg_01.gif) repeat-x left center;}
+.company_cooperation_center{width:100%;height:57px;background:url(../images/footer_bg_02.jpg) no-repeat center center;}
 
+footer{float: left;width: 100%;background: #191A21;color: #ffffff}
 .footer_banner{margin: 20px auto;width: 1200px;}
 .footer_banner .pre_click{float: left;width: 5%}
 .footer_banner ul{float: left;width: 90%}
@@ -42,5 +59,5 @@ header{margin: 0 auto;width: 1200px;}
 .footer_banner .after_click{float: left;width: 5%}
 
 .footer_center{margin: 0 auto;width: 1200px;}
-.footer_center p{text-align: center;line-height: 30px;}
-.footer_center p a{padding: 0 20px;}
+.footer_center p{text-align: center;line-height: 14px;}
+.footer_center p a{padding: 0 20px;color: #ffffff}
