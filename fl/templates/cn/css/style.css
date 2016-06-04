@@ -72,10 +72,9 @@ header{margin: 0 auto;width: 1200px;}
 #focus .pre{left:0;}
 #focus .next{right:0;background-position:right top;}
 
-.main{margin: 0 auto;width: 1200px;}
-.product_list{float: left;padding: 0;margin: 5px 0}
+.main{margin: 0 auto;width: 1200px;overflow-x: hidden}
+.product_list{float: left;width:105%;padding: 0;margin: 5px 0}
 .product_list li{float: left;display: inline-block;width: 236px;background: #ffffff;margin-right: 5px;}
-.product_list li.last_product_list{margin-right: 0}
 .product_list li img{width: 236px;height: 147px;}
 .product_list li p.pro_title{margin: 30px 15px 15px 25px;height: 40px;line-height: 40px;}
 .product_list li p.click_more_description{line-height: 20px;margin:20px 15px 0 25px;padding-bottom: 25px;border-bottom: 1px solid #EDEDED}
