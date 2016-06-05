@@ -15,81 +15,71 @@
     <div class="main">
         <ul class="product_list">
             <?php
-                $dosql->Execute("SELECT id,classname,picurl FROM `#@__infoclass` WHERE parentid=1 AND checkinfo=true ORDER BY orderid asc LIMIT 0,5");
+                $dosql->Execute("SELECT id,classname,picurl,linkurl,description FROM `#@__infoclass` WHERE parentid=1 AND checkinfo=true ORDER BY orderid asc LIMIT 0,5");
                 while($row = $dosql->GetArray())
                 {
-                        if($row['linkurl'] != '')$gourl = $row['linkurl'];
-                        else $gourl = 'javascript:;';
+                    //获取链接地址
+                    if($row['linkurl']=='' and $cfg_isreurl!='Y')
+                            $gourl = 'product.php?cid='.$row['id'];
+                    else if($cfg_isreurl=='Y')
+                            $gourl = 'product-'.$row['id'].'.html';
+                    else
+                            $gourl = $row['linkurl'];
+
+                    //获取缩略图地址
+                    if($row['picurl']!='')
+                            $picurl = $row['picurl'];
+                    else
+                            $picurl = 'templates/default/images/nofoundpic.gif';
             ?>
             <li>
                 <a href="<?php echo $gourl; ?>">
-                    <img src="<?php echo $row['picurl']; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/>
+                    <img src="<?php echo $picurl; ?>" alt="<?php echo $row['classname']; ?>" title="<?php echo $row['classname']; ?>"/>
                 </a>
-                <p class="pro_title">硬臂式机械手</p>
-                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
-                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
-                <p class="click_more_icon"><a href="">了解更多</a></p>
+                <p class="pro_title"><?php echo $row['classname']; ?></p>
+                <p class="click_more_description"><?php echo mb_substr($row['description'],0,50,'utf-8'); ?></p>
+                <p class="click_more_icon"><a href="<?php echo $gourl; ?>">了解更多</a></p>
             </li>
             <?php
                 }
             ?>
-            <li>
-                <a href="">
-                    <img src="../images/index_pro_01.gif" alt="" title=""/>
-                </a>
-                <p class="pro_title">硬臂式机械手</p>
-                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
-                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
-                <p class="click_more_icon"><a href="">了解更多</a></p>
-            </li>
-            <li>
-                <a href="">
-                    <img src="../images/index_pro_01.gif" alt="" title=""/>
-                </a>
-                <p class="pro_title">硬臂式机械手</p>
-                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
-                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
-                <p class="click_more_icon"><a href="">了解更多</a></p>
-            </li>
-            <li>
-                <a href="">
-                    <img src="../images/index_pro_01.gif" alt="" title=""/>
-                </a>
-                <p class="pro_title">硬臂式机械手</p>
-                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
-                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
-                <p class="click_more_icon"><a href="">了解更多</a></p>
-            </li>
-            <li>
-                <a href="">
-                    <img src="../images/index_pro_01.gif" alt="" title=""/>
-                </a>
-                <p class="pro_title">硬臂式机械手</p>
-                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
-                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
-                <p class="click_more_icon"><a href="">了解更多</a></p>
-            </li>
         </ul>
         <div class="news_about_mv">
             <div class="news_list_index">
                 <p class="news_list_title">新闻中心 News</p>
-                <p class="news_list_decription">软索式机械手的功能与气动平衡吊类似，具有全程的“漂浮”功能。由于主机和夹具间通过一钢丝绳连接......</p>
+                <p class="news_list_decription">
+                    <?php
+                    $row = $dosql->GetOne("SELECT description FROM `#@__infoclass` WHERE id=18");
+                    echo mb_substr($row['description'],0,20,'utf-8');
+                    ?>
+                </p>
                 <ul>
-                    <li><a href="">5月10日，机械新品发布</a></li>
-                    <li><a href="">5月10日，机械新品发布</a></li>
-                    <li><a href="">5月10日，机械新品发布</a></li>
-                    <li><a href="">5月10日，机械新品发布</a></li>
-                    <li><a href="">5月10日，机械新品发布</a></li>
+                    <?php
+                        $dosql->Execute("SELECT id,classid,linkurl,title FROM `#@__infolist` WHERE classid=18 AND delstate='' AND checkinfo=true ORDER BY orderid desc LIMIT 0,5");
+                        while($row = $dosql->GetArray())
+                        {
+                            //获取链接地址
+                            if($row['linkurl']=='' and $cfg_isreurl!='Y')
+                                    $gourl = 'newsdetail.php?cid='.$row['classid'].'&id='.$row['id'];
+                            else if($cfg_isreurl=='Y')
+                                    $gourl = 'newsdetail-'.$row['classid'].'-'.$row['id'].'.html';
+                            else
+                                    $gourl = $row['linkurl'];
+                    ?>
+                    <li><a href="<?php echo $gourl; ?>"><?php echo $row['title']; ?></a></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
-                <p class="news_list_more_icon"><a href="">查看更多>></a></p>
+                <p class="news_list_more_icon"><a href="<?php echo $cfg_isreurl!='Y'?'news.php':'news.html'; ?>">查看更多>></a></p>
             </div>
             <div class="aboutus_index">
                 <p class="news_list_title">公司简介 Company</p>
-                <p><img src="../images/index_about.gif"/></p>
-                <p class="about_description">费兰智能设备(上海）有限公司于2010年在上海成立，是一家集生产、技术、服务于一体的独资企业。主要生产 archer品牌的助力机械设备，目前在中国......</p>
+                <p><img src="<?php echo InfoPic(20); ?>"/></p>
+                <p class="about_description"><?php echo Info(20,50) ?></p>
             </div>
             <div class="mv_index">
-                <img src="../images/index_mv.gif" alt="" title=""/>
+                <img src="templates/cn/images/index_mv.gif" alt="" title=""/>
             </div>
         </div>
     </div>
@@ -104,42 +94,18 @@
                 <div class="ScrCont">
                     <div id="List1">
                         <!-- 图片列表 begin -->
+                        <?php
+                            $dosql->Execute("SELECT picurl,title FROM `#@__infoimg` WHERE classid=28 AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
+                            while($row = $dosql->GetArray())
+                            {
+                        ?>
                         <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_02.gif"  /></a>
-                            <p>通用汽车</p>
+                            <a title="<?php echo $row['title']; ?>" href="javascript:void(0);"><img alt="" src="<?php echo $row['picurl']; ?>"  /></a>
+                            <p><?php echo $row['title']; ?></p>
                         </div> 
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_03.gif" /></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_04.jpg"></a>
-                            <p>通用汽车</p>
-                        </div> 
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_05.gif"></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_06.gif"></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_01.jpg"></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_05.gif"></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_06.gif"></a>
-                            <p>通用汽车</p>
-                        </div>
-                        <div class="pic">
-                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_01.jpg"></a>
-                            <p>通用汽车</p>
-                        </div>
+                        <?php
+                            }
+                        ?>
                         <!-- 图片列表 end -->
                     </div>
                     <div id="List2"></div>

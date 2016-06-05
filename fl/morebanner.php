@@ -3,7 +3,7 @@
         <div id="focus">
             <ul>
                 <?php
-                    $dosql->Execute("SELECT * FROM `#@__infoimg` WHERE classid=27 AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,5");
+                    $dosql->Execute("SELECT linkurl,picurl,title FROM `#@__infoimg` WHERE classid=27 AND delstate='' AND checkinfo=true ORDER BY orderid DESC LIMIT 0,5");
                     while($row = $dosql->GetArray())
                     {
                             if($row['linkurl'] != '')$gourl = $row['linkurl'];
