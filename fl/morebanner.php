@@ -67,8 +67,8 @@
         <div class="banner_hover">
             <div class="banner_bottom_bg"></div>
             <div class="banner_bottom_content">
-                <form action="" method="GET" class="banner_hover_left">
-                    <input class="search_text" type="text" name="title"/>
+                <form action="product.php" method="GET" class="banner_hover_left">
+                    <input class="search_text" type="text" name="keyword" value="<?php if(isset($keyword)){echo $keyword;} ?>"/>
                     <input class="search_submit" type="submit" value="提交" />
                 </form>
                 <div class="banner_hover_right">

@@ -37,7 +37,7 @@
                     <img src="<?php echo $picurl; ?>" alt="<?php echo $row['classname']; ?>" title="<?php echo $row['classname']; ?>"/>
                 </a>
                 <p class="pro_title"><?php echo $row['classname']; ?></p>
-                <p class="click_more_description"><?php echo mb_substr($row['description'],0,50,'utf-8'); ?></p>
+                <p class="click_more_description"><?php echo mb_substr($row['description'],0,76,'utf-8'); ?><?php echo strlen($row['description'])>200?'......':''; ?></p>
                 <p class="click_more_icon"><a href="<?php echo $gourl; ?>">了解更多</a></p>
             </li>
             <?php
@@ -50,7 +50,8 @@
                 <p class="news_list_decription">
                     <?php
                     $row = $dosql->GetOne("SELECT description FROM `#@__infoclass` WHERE id=18");
-                    echo mb_substr($row['description'],0,20,'utf-8');
+                    echo mb_substr($row['description'],0,50,'utf-8');
+                    echo strlen($row['description'])>100?'......':'';
                     ?>
                 </p>
                 <ul>
@@ -75,8 +76,16 @@
             </div>
             <div class="aboutus_index">
                 <p class="news_list_title">公司简介 Company</p>
-                <p><img src="<?php echo InfoPic(20); ?>"/></p>
-                <p class="about_description"><?php echo Info(20,50) ?></p>
+                <p><img src="<?php
+                    $picurl = InfoPic(20);
+                    echo empty($picurl) ? 'templates/default/images/nofoundpic.gif':$picurl; 
+                    
+                    ?>" width="224" height="108"/></p>
+                <p class="about_description"><?php
+                    $infos = Info(20);
+                    echo mb_substr($infos,0,100,'utf-8');
+                    echo strlen($infos)>210?'......':''; 
+                        ?></p>
             </div>
             <div class="mv_index">
                 <img src="templates/cn/images/index_mv.gif" alt="" title=""/>

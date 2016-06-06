@@ -134,7 +134,7 @@ footer{float: left;width: 100%;background: #191A21;color: #ffffff}
 .nav_left ul li:hover a{color:#ffffff}
 
 /*右侧栏*/
-.right_main{float: left;width: 840px;border-left: 2px solid #E9EAEE;padding-left: 25px}
+.right_main{float: left;width: 840px;border-left: 2px solid #E9EAEE;padding: 0 0 50px 25px}
 .right_main_position{float: left;width:100%;font-size: 16px;line-height: 64px;border-bottom: 2px solid #E9EAEE;}
 .right_main_position a{color:#515050}
 .right_main_content{float: left;width: 100%;font-size: 14px;padding-top: 10px}

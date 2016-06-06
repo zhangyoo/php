@@ -1,7 +1,7 @@
 <?php	if(!defined('IN_PHPMYWIND')) exit('Request Error!');
 
-$cfg_webname = '我的网站';
-$cfg_weburl = 'http://localhost';
+$cfg_webname = '费兰智能设备（上海）有限公司';
+$cfg_weburl = 'http://www.fl.com';
 $cfg_webpath = '/php/fl';
 $cfg_author = '';
 $cfg_generator = 'PHPMyWind CMS';
@@ -28,7 +28,7 @@ $cfg_member = 'Y';
 $cfg_oauth = 'Y';
 $cfg_comment = 'Y';
 $cfg_maintype = 'N';
-$cfg_typefold = 'N';
+$cfg_typefold = 'Y';
 $cfg_quicktool = 'Y';
 $cfg_diserror = 'Y';
 $cfg_isreurl = 'N';
