@@ -29,8 +29,8 @@ $cid = empty($cid) ? 26 : intval($cid);
             <div class="right_main">
                 <div class="right_main_position">
                     当前位置：
-                    <a href="<?php echo $cfg_weburl; ?>">首页</a> > 
-                    <a href="javascript:void(0);">联系我们</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
+                    <a href="javascript:void(0);">联系我们</a>
                 </div>
                 <div class="right_main_content">
                     <div id="allmap"></div>

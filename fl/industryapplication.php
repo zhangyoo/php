@@ -29,7 +29,7 @@ $cid = empty($cid) ? 13 : intval($cid);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_weburl; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_weburl; ?>/industryapplication.php">行业应用</a> > 
+                    <a href="<?php echo $cfg_weburl; ?>/industryapplication.php">行业应用</a>
                 </div>
                 <div class="right_main_content">
                     <div class="right_main_content_description">

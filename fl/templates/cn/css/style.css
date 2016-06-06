@@ -130,8 +130,8 @@ footer{float: left;width: 100%;background: #191A21;color: #ffffff}
 .nav_left ul{float: left;width: 100%;padding-top: 10px;}
 .nav_left ul li{float: left;width: 70%;font-size: 14px;line-height: 35px;text-align: left;padding-left: 30%;border-bottom: 1px solid #E9EAEE;}
 .nav_left ul li a{color:#515050}
-.nav_left ul li:hover{background: url(../images/product_06.gif) no-repeat 25% center #178CD1;}
-.nav_left ul li:hover a{color:#ffffff}
+.nav_left ul li:hover,.nav_left ul li.pro_li_hover{background: url(../images/product_06.gif) no-repeat 25% center #178CD1;}
+.nav_left ul li:hover a,.nav_left ul li.pro_li_hover a{color:#ffffff}
 
 /*右侧栏*/
 .right_main{float: left;width: 840px;border-left: 2px solid #E9EAEE;padding: 0 0 50px 25px}

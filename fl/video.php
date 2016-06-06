@@ -32,11 +32,11 @@ $cid = empty($cid) ? 7 : intval($cid);
                             if($row['linkurl']=='' and $cfg_isreurl!='Y')
                                     $gourl = 'video.php?cid='.$row['id'];
                             else if($cfg_isreurl=='Y')
-                                    $gourl = 'video-'.$row['id'].'.html';
+                                    $gourl = 'video-'.$row['id'].'-1.html';
                             else
                                     $gourl = $row['linkurl'];
                     ?>
-                    <li><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
+                    <li class="<?php echo $cid == $row['id'] ? 'pro_li_hover':'';?>"><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
                     <?php
                         }
                     ?>
@@ -45,8 +45,8 @@ $cid = empty($cid) ? 7 : intval($cid);
             <div class="right_main">
                 <div class="right_main_position">
                     当前位置：
-                    <a href="<?php echo $cfg_weburl; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_weburl; ?>/video.php">产品视频</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'video.html':'video.php'; ?>">产品视频</a> > 
                     <?php if($cid == 1){ ?>
                     <a href="javascript:void(0);">所有视频</a>
                     <?php }else{ 

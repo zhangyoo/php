@@ -37,7 +37,7 @@ $id  = empty($id)  ? 0 : intval($id);
                             else
                                     $gourl = $row['linkurl'];
                     ?>
-                    <li><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
+                    <li class="<?php echo $cid == $row['id'] ? 'pro_li_hover':'';?>"><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
                     <?php
                         }
                     ?>
@@ -46,14 +46,14 @@ $id  = empty($id)  ? 0 : intval($id);
             <div class="right_main">
                 <div class="right_main_position">
                     当前位置：
-                    <a href="<?php echo $cfg_weburl; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_weburl; ?>/product.php">产品中心</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'product.html':'product.php'; ?>">产品中心</a> > 
                     <?php if($cid!= 1){
                            $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                            if($row['linkurl']=='' and $cfg_isreurl!='Y'){
                                $gourl = 'product.php?cid='.$row['id'];
                            }else if($cfg_isreurl=='Y'){
-                               $gourl = 'product-'.$row['id'].'.html';
+                               $gourl = 'product-'.$row['id'].'-1.html';
                            }else{
                               $gourl = $row['linkurl']; 
                            }
@@ -70,7 +70,7 @@ $id  = empty($id)  ? 0 : intval($id);
                     $dosql->ExecNoneQuery("UPDATE `#@__infoimg` SET hits=hits+1 WHERE id=$id");
                     $row = $dosql->GetOne("SELECT title,content FROM `#@__infoimg` WHERE id=$id");
                     ?>
-                    <?php echo $row['title']; ?>
+                    <a href="javascript:void(0);"><?php echo $row['title']; ?></a>
                 </div>
                 <div class="right_main_content">
                     <?php echo $row['content']; ?>
