@@ -36,7 +36,7 @@ $cid = empty($cid) ? 19 : intval($cid);
                             else
                                     $gourl = $row['linkurl'];
                     ?>
-                    <li><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
+                    <li class="<?php echo $cid == $row['id'] ? 'pro_li_hover':'';?>"><a href="<?php echo $gourl; ?>"><?php echo $row['classname']; ?></a></li>
                     <?php
                         }
                     ?>

@@ -2,10 +2,10 @@
     <div class="footer_center">
         <p style="padding-top: 40px">
             <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a>|
-            <a href="<?php echo $cfg_isreurl=='Y'?'product.html':'product.php'; ?>">产品中心</a>|
-            <a href="<?php echo $cfg_isreurl=='Y'?'video.html':'video.php'; ?>">产品视频</a>|
+            <a href="<?php echo $cfg_isreurl=='Y'?'product-1-1.html':'product.php'; ?>">产品中心</a>|
+            <a href="<?php echo $cfg_isreurl=='Y'?'video-7-1.html':'video.php'; ?>">产品视频</a>|
             <a href="<?php echo $cfg_isreurl=='Y'?'industryapplication.html':'industryapplication.php'; ?>">行业应用</a>|
-            <a href="<?php echo $cfg_isreurl=='Y'?'news.html':'news.php'; ?>">新闻中心</a>|
+            <a href="<?php echo $cfg_isreurl=='Y'?'news-18-1.html':'news.php'; ?>">新闻中心</a>|
             <a href="<?php echo $cfg_isreurl=='Y'?'about-20.html':'about.php?cid=20'; ?>">关于企业</a>|
             <a href="<?php echo $cfg_isreurl=='Y'?'joinus.html':'joinus.php'; ?>">加入我们</a>|
             <a href="<?php echo $cfg_isreurl=='Y'?'linkus.html':'linkus.php'; ?>">联系我们</a>

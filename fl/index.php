@@ -22,7 +22,7 @@
                     if($row['linkurl']=='' and $cfg_isreurl!='Y')
                             $gourl = 'product.php?cid='.$row['id'];
                     else if($cfg_isreurl=='Y')
-                            $gourl = 'product-'.$row['id'].'.html';
+                            $gourl = 'product-'.$row['id'].'-1.html';
                     else
                             $gourl = $row['linkurl'];
 
@@ -72,7 +72,7 @@
                         }
                     ?>
                 </ul>
-                <p class="news_list_more_icon"><a href="<?php echo $cfg_isreurl!='Y'?'news.php':'news.html'; ?>">查看更多>></a></p>
+                <p class="news_list_more_icon"><a href="<?php echo $cfg_isreurl!='Y'?'news.php':'news-18-1.html'; ?>">查看更多>></a></p>
             </div>
             <div class="aboutus_index">
                 <p class="news_list_title">公司简介 Company</p>

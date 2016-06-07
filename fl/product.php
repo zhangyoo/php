@@ -32,7 +32,7 @@ $cid = empty($cid) ? 1 : intval($cid);
                             if($row['linkurl']=='' and $cfg_isreurl!='Y')
                                     $gourl = 'product.php?cid='.$row['id'];
                             else if($cfg_isreurl=='Y')
-                                    $gourl = 'product-'.$row['id'].'.html';
+                                    $gourl = 'product-'.$row['id'].'-1.html';
                             else
                                     $gourl = $row['linkurl'];
                     ?>
@@ -96,14 +96,14 @@ $cid = empty($cid) ? 1 : intval($cid);
                         <li>
                             <a href="<?php echo $gourl; ?>"><image src="<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
                             <p class="product_list_li_p"><a href="<?php echo $gourl; ?>"><?php echo $row['title']; ?></a></p>
-                            <p class="contact_online"><a href="javascript:void(0);">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
+                            <p class="contact_online"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
                         </li>
                         <?php
                             }
                         ?>
                     </ul>
                 </div>
-                <div class="page_list">
+                <div class="page_info">
                     <?php echo $dopage->GetList(); ?> 
                 </div>
             </div>

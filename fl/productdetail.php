@@ -78,7 +78,7 @@ $id  = empty($id)  ? 0 : intval($id);
                 </div>
                 <div class="talk_online">
                     <span class="talk_online_tip">如果您有任何需要可在线联系我们或直接拨打免费热线：158-0090-2006&nbsp;&nbsp;我们将立即给您答复！</span>
-                    <span class="talk_online_icon"><a href="javascript:void(0);"><img src="templates/cn/images/product_03.png"/></a></span>
+                    <span class="talk_online_icon"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes"><img src="templates/cn/images/product_03.png"/></a></span>
                 </div>
                 <div class="product_more_list right_main_content">
                     <div class="product_more_list_title"><b>更多产品推荐</b></div>
@@ -98,7 +98,7 @@ $id  = empty($id)  ? 0 : intval($id);
                         <li>
                             <a href=""><image src="<?php echo $row['picurl']; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
                             <p class="product_list_li_p"><a href="<?php echo $gourl; ?>"><?php echo $row['title']; ?></a></p>
-                            <p class="contact_online"><a href="javascript:void(0);">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
+                            <p class="contact_online"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
                         </li>
                         <?php
                             }
