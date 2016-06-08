@@ -30,7 +30,7 @@
                     if($row['picurl']!='')
                             $picurl = $row['picurl'];
                     else
-                            $picurl = 'templates/default/images/nofoundpic.gif';
+                            $picurl = '../templates/default/images/nofoundpic.gif';
             ?>
             <li>
                 <a href="<?php echo $gourl; ?>">
