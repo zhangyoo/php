@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9"> 
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/ext.js"></script>
+</head>
+<body>
+    <header>
+        <div class="top">
+            <div class="logo">
+                <a href="" title="费兰智能设备（上海）有限公司"><img src="../images/logo.jpg" alt="费兰智能设备（上海）有限公司"/></a>
+            </div>
+            <ul class="nav">
+                <li><a href="">首页</a></li>
+                <li><a href="">产品中心</a></li>
+                <li><a href="">产品视频</a></li>
+                <li><a href="">行业应用</a></li>
+                <li><a href="">新闻中心</a></li>
+                <li><a href="">关于企业</a></li>
+                <li><a href="">加入我们</a></li>
+                <li><a href="">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="banner_content">
+            <div id="focus">
+                <ul>
+                    <li><a href="" target="_blank"><img src="../images/banner_00.jpg" alt="QQ商城焦点图效果下载" /></a></li>
+                    <li><a href="" target="_blank"><img src="../images/01.jpg" alt="QQ商城焦点图效果下载" /></a></li>
+                    <li><a href="" target="_blank"><img src="../images/02.jpg" alt="QQ商城焦点图效果教程" /></a></li>
+                    <li><a href="" target="_blank"><img src="../images/03.jpg" alt="jquery商城焦点图效果" /></a></li>
+                    <li><a href="" target="_blank"><img src="../images/04.jpg" alt="jquery商城焦点图代码" /></a></li>
+                    <li><a href="" target="_blank"><img src="../images/05.jpg" alt="jquery商城焦点图源码" /></a></li>
+                </ul>
+                <div class='preNext pre'></div><div class='preNext next'></div>
+            </div>
+            <script type="text/javascript">
+            $(function() {
+                    var sWidth = $("#focus").width(); //获取焦点图的宽度（显示面积）
+                    var len = $("#focus ul li").length; //获取焦点图个数
+                    var index = 0;
+                    var picTimer;
+                    //本例为左右滚动，即所有li元素都是在同一排向左浮动，所以这里需要计算出外围ul元素的宽度
+                    $("#focus ul").css("width",sWidth * (len));
+
+                    //上一页、下一页按钮透明度处理
+                    $("#focus .preNext").css("opacity",0.2).hover(function() {
+                            $(this).stop(true,false).animate({"opacity":"0.5"},300);
+                    },function() {
+                            $(this).stop(true,false).animate({"opacity":"0.2"},300);
+                    });
+
+                    //上一页按钮
+                    $("#focus .pre").click(function() {
+                            index -= 1;
+                            if(index == -1) {index = len - 1;}
+                            showPics(index);
+                    });
+
+                    //下一页按钮
+                    $("#focus .next").click(function() {
+                            index += 1;
+                            if(index == len) {index = 0;}
+                            showPics(index);
+                    });
+
+                    //鼠标滑上焦点图时停止自动播放，滑出时开始自动播放
+                    $("#focus").hover(function() {
+                            clearInterval(picTimer);
+                    },function() {
+                            picTimer = setInterval(function() {
+                                    showPics(index);
+                                    index++;
+                                    if(index == len) {index = 0;}
+                            },4000); //此4000代表自动播放的间隔，单位：毫秒
+                    }).trigger("mouseleave");
+
+                    //显示图片函数，根据接收的index值显示相应的内容
+                    function showPics(index) { //普通切换
+                            var nowLeft = -index*sWidth; //根据index值计算ul元素的left值
+                            $("#focus ul").stop(true,false).animate({"left":nowLeft},300); //通过animate()调整ul元素滚动到计算出的position
+                    }
+            });
+            </script>
+            <div class="banner_hover">
+                <div class="banner_bottom_bg"></div>
+                <div class="banner_bottom_content">
+                    <form action="" method="GET" class="banner_hover_left">
+                        <input class="search_text" type="text" name="title"/>
+                        <input class="search_submit" type="submit" value="提交" />
+                    </form>
+                    <div class="banner_hover_right">
+                        <p>服务热线</p>
+                        <p class="number_num">158-0090-2006</p>
+                        <p>我们为您提供专业的搬运解决方案</p>
+                        <p><img src="../images/weixin_icon.gif"/></p>
+                        <p>搜索费兰关注我们</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <ul class="product_list">
+            <li>
+                <a href="">
+                    <img src="../images/index_pro_01.gif" alt="" title=""/>
+                </a>
+                <p class="pro_title">硬臂式机械手</p>
+                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
+                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
+                <p class="click_more_icon"><a href="">了解更多</a></p>
+            </li>
+            <li>
+                <a href="">
+                    <img src="../images/index_pro_01.gif" alt="" title=""/>
+                </a>
+                <p class="pro_title">硬臂式机械手</p>
+                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
+                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
+                <p class="click_more_icon"><a href="">了解更多</a></p>
+            </li>
+            <li>
+                <a href="">
+                    <img src="../images/index_pro_01.gif" alt="" title=""/>
+                </a>
+                <p class="pro_title">硬臂式机械手</p>
+                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
+                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
+                <p class="click_more_icon"><a href="">了解更多</a></p>
+            </li>
+            <li>
+                <a href="">
+                    <img src="../images/index_pro_01.gif" alt="" title=""/>
+                </a>
+                <p class="pro_title">硬臂式机械手</p>
+                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
+                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
+                <p class="click_more_icon"><a href="">了解更多</a></p>
+            </li>
+            <li class="last_product_list">
+                <a href="">
+                    <img src="../images/index_pro_01.gif" alt="" title=""/>
+                </a>
+                <p class="pro_title">硬臂式机械手</p>
+                <p class="click_more_description">由于系统基本是刚性臂杆结构组成，它与气动平衡吊和软索式助力机械手一样都具
+                    有全行程“漂浮”功能，区别是在有扭矩产生的情况下无法使用气动平衡吊或是软索式助力......</p>
+                <p class="click_more_icon"><a href="">了解更多</a></p>
+            </li>
+        </ul>
+        <div class="news_about_mv">
+            <div class="news_list_index">
+                <p class="news_list_title">新闻中心 News</p>
+                <p class="news_list_decription">软索式机械手的功能与气动平衡吊类似，具有全程的“漂浮”功能。由于主机和夹具间通过一钢丝绳连接......</p>
+                <ul>
+                    <li><a href="">5月10日，机械新品发布</a></li>
+                    <li><a href="">5月10日，机械新品发布</a></li>
+                    <li><a href="">5月10日，机械新品发布</a></li>
+                    <li><a href="">5月10日，机械新品发布</a></li>
+                    <li><a href="">5月10日，机械新品发布</a></li>
+                </ul>
+                <p class="news_list_more_icon"><a href="">查看更多>></a></p>
+            </div>
+            <div class="aboutus_index">
+                <p class="news_list_title">公司简介 Company</p>
+                <p><img src="../images/index_about.gif"/></p>
+                <p class="about_description">费兰智能设备(上海）有限公司于2010年在上海成立，是一家集生产、技术、服务于一体的独资企业。主要生产 archer品牌的助力机械设备，目前在中国......</p>
+            </div>
+            <div class="mv_index">
+                <img src="../images/index_mv.gif" alt="" title=""/>
+            </div>
+        </div>
+    </div>
+    <div class="company_cooperation">
+        <div class="company_cooperation_center">
+        </div>
+    </div>
+    <div class="footer_banner">
+        <div class="scrollcon">
+            <div class="LeftBotton" onmousedown="ISL_GoUp()" onmouseup="ISL_StopUp()" onmouseout="ISL_StopUp()"></div>
+            <div class="Cont" id="ISL_Cont">
+                <div class="ScrCont">
+                    <div id="List1">
+                        <!-- 图片列表 begin -->
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_02.gif"  /></a>
+                            <p>通用汽车</p>
+                        </div> 
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_03.gif" /></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_04.jpg"></a>
+                            <p>通用汽车</p>
+                        </div> 
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_05.gif"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_06.gif"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_01.jpg"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_05.gif"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_06.gif"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <div class="pic">
+                            <a title="" href="javascript:void(0);"><img alt="" src="../images/logo_other_01.jpg"></a>
+                            <p>通用汽车</p>
+                        </div>
+                        <!-- 图片列表 end -->
+                    </div>
+                    <div id="List2"></div>
+                </div>
+            </div>
+            <div class="RightBotton" onmousedown="ISL_GoDown()" onmouseup="ISL_StopDown()" onmouseout="ISL_StopDown()"></div>
+	</div>
+    </div>
+    <footer>
+        <div class="footer_center">
+            <p style="padding-top: 40px">
+                <a href="">首页</a>|
+                <a href="">产品中心</a>|
+                <a href="">产品视频</a>|
+                <a href="">行业应用</a>|
+                <a href="">新闻中心</a>|
+                <a href="">关于企业</a>|
+                <a href="">加入我们</a>|
+                <a href="">联系我们</a>
+            </p>
+            <p style="padding-top: 20px">手机：:13052506373 （吴经理） 电话：021-50311307 电子邮箱：feylandsh@sina.com　传真：68362900</p>
+            <p>地址：上海市南汇工业园区南芦公路106号</p>
+            <p>费兰智能设备（上海）有限公司 Copyright 1998-2014   网站制作 嗅觉设计</p>
+        </div>
+    </footer>
+<script type="text/javascript">
+    //图片滚动列表
+    var Speed = 0.01;//速度(毫秒)
+    var Space = 5;//每次移动(px)
+    var PageWidth = 182;//翻页宽度
+    var fill = 0;//整体移位
+    var MoveLock = false;
+    var MoveTimeObj;
+    var Comp = 0;
+    var AutoPlayObj = null;
+    GetObj("List2").innerHTML = GetObj("List1").innerHTML;
+    GetObj('ISL_Cont').scrollLeft = fill;
+    GetObj("ISL_Cont").onmouseover = function(){
+            clearInterval(AutoPlayObj);
+    }
+    GetObj("ISL_Cont").onmouseout = function(){
+            AutoPlay();
+    }
+
+    AutoPlay();
+
+    function GetObj(objName){
+            if(document.getElementById){
+                    return eval('document.getElementById("'+objName+'")')
+            }else{
+                    return eval('document.all.'+objName)
+            }
+    }
+
+    function AutoPlay(){ //自动滚动
+            clearInterval(AutoPlayObj);
+            AutoPlayObj = setInterval('ISL_GoDown();ISL_StopDown();',2000);//间隔时间
+    }
+
+    function ISL_GoUp(){ //上翻开始
+            if(MoveLock) return;
+            clearInterval(AutoPlayObj);
+            MoveLock = true;
+            MoveTimeObj = setInterval('ISL_ScrUp();',Speed);
+    }
+
+    function ISL_StopUp(){ //上翻停止
+            clearInterval(MoveTimeObj);
+            if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0){
+                    Comp = fill - (GetObj('ISL_Cont').scrollLeft % PageWidth);
+                    CompScr();
+            }else{
+                    MoveLock = false;
+            }
+            AutoPlay();
+    }
+
+    function ISL_ScrUp(){ //上翻动作
+            if(GetObj('ISL_Cont').scrollLeft <= 0){
+                    GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft + GetObj('List1').offsetWidth
+            }
+                    GetObj('ISL_Cont').scrollLeft -= Space ;
+    }
+
+    function ISL_GoDown(){ //下翻
+            clearInterval(MoveTimeObj);
+            if(MoveLock) return;
+            clearInterval(AutoPlayObj);
+            MoveLock = true;
+            ISL_ScrDown();
+            MoveTimeObj = setInterval('ISL_ScrDown()',Speed);
+    }
+    function ISL_StopDown(){ //下翻停止
+            clearInterval(MoveTimeObj);
+            if(GetObj('ISL_Cont').scrollLeft % PageWidth - fill != 0 ){
+                    Comp = PageWidth - GetObj('ISL_Cont').scrollLeft % PageWidth + fill;
+                    CompScr();
+            }else{
+                    MoveLock = false;
+            }
+            AutoPlay();
+    }
+
+    function ISL_ScrDown(){ //下翻动作
+            if(GetObj('ISL_Cont').scrollLeft >= GetObj('List1').scrollWidth){
+                    GetObj('ISL_Cont').scrollLeft = GetObj('ISL_Cont').scrollLeft - GetObj('List1').scrollWidth;
+            }
+            GetObj('ISL_Cont').scrollLeft += Space ;
+    }
+
+    function CompScr(){
+            var num;
+            if(Comp == 0){
+                    MoveLock = false;return;
+            }
+            if(Comp < 0){ //上翻
+                    if(Comp < -Space){
+                            Comp += Space;
+                            num = Space;
+                    }else{
+                            num = -Comp;
+                            Comp = 0;
+                    }
+                    GetObj('ISL_Cont').scrollLeft -= num;
+                    setTimeout('CompScr()',Speed);
+            }else{ //下翻
+                    if(Comp > Space){
+                            Comp -= Space;
+                            num = Space;
+                    }else{
+                            num = Comp;
+                            Comp = 0;
+                    }
+                    GetObj('ISL_Cont').scrollLeft += num;
+                    setTimeout('CompScr()',Speed);
+            }
+    }
+</script>
+</body>
+</html>

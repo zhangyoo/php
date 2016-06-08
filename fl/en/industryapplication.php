@@ -1,7 +1,7 @@
 <?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
+require_once(dirname(__FILE__).'/../include/config.inc.php');
 //初始化参数检测正确性
-$cid = empty($cid) ? 13 : intval($cid);
+$cid = empty($cid) ? 43 : intval($cid);
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,9 @@ $cid = empty($cid) ? 13 : intval($cid);
 <meta http-equiv="X-UA-Compatible" content="IE=9"> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <?php echo GetHeader(1,$cid); ?>
-<link rel="stylesheet" type="text/css" href="templates/cn/css/style.css">
-<script type="text/javascript" src="templates/cn/js/jquery.js"></script>
-<script type="text/javascript" src="templates/cn/js/ext.js"></script>
+<link rel="stylesheet" type="text/css" href="../templates/en/css/style.css">
+<script type="text/javascript" src="../templates/en/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
     <?php require_once('header.php'); ?>
@@ -47,7 +47,7 @@ $cid = empty($cid) ? 13 : intval($cid);
                             <div class="img-list">
                                 <ul>
                                     <?php
-                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=14 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=44 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
                                         $dosql->Execute($sql);
                                         while($row = $dosql->GetArray())
                                         {
@@ -70,7 +70,7 @@ $cid = empty($cid) ? 13 : intval($cid);
                             <div class="img-list">
                                 <ul>
                                     <?php
-                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=15 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=45 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
                                         $dosql->Execute($sql);
                                         while($row = $dosql->GetArray())
                                         {
@@ -93,7 +93,7 @@ $cid = empty($cid) ? 13 : intval($cid);
                             <div class="img-list">
                                 <ul>
                                     <?php
-                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=16 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=46 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
                                         $dosql->Execute($sql);
                                         while($row = $dosql->GetArray())
                                         {
@@ -116,7 +116,7 @@ $cid = empty($cid) ? 13 : intval($cid);
                             <div class="img-list">
                                 <ul>
                                     <?php
-                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=17 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                                        $sql = "SELECT picurl,title FROM `#@__infoimg` WHERE classid=47 AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
                                         $dosql->Execute($sql);
                                         while($row = $dosql->GetArray())
                                         {

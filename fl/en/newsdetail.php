@@ -1,7 +1,7 @@
 <?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
+require_once(dirname(__FILE__).'/../include/config.inc.php');
 //初始化参数检测正确性
-$cid = empty($cid) ? 18 : intval($cid);
+$cid = empty($cid) ? 48 : intval($cid);
 $id  = empty($id)  ? 0 : intval($id);
 ?>
 <!DOCTYPE html>
@@ -10,9 +10,9 @@ $id  = empty($id)  ? 0 : intval($id);
 <meta http-equiv="X-UA-Compatible" content="IE=9"> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <?php echo GetHeader(1,$cid,$id); ?>
-<link rel="stylesheet" type="text/css" href="templates/cn/css/style.css">
-<script type="text/javascript" src="templates/cn/js/jquery.js"></script>
-<script type="text/javascript" src="templates/cn/js/ext.js"></script>
+<link rel="stylesheet" type="text/css" href="../templates/en/css/style.css">
+<script type="text/javascript" src="../templates/en/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
     <?php require_once('header.php'); ?>
@@ -30,7 +30,7 @@ $id  = empty($id)  ? 0 : intval($id);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'news-18-1.html':'news.php'; ?>">新闻中心</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'news-48-1.html':'news.php'; ?>">新闻中心</a> > 
                     <?php
                     //检测文档正确性
                     $r = $dosql->GetOne("SELECT title,content FROM `#@__infolist` WHERE id=$id");

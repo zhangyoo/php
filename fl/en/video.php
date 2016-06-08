@@ -1,7 +1,7 @@
 <?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
+require_once(dirname(__FILE__).'/../include/config.inc.php');
 //初始化参数检测正确性
-$cid = empty($cid) ? 7 : intval($cid);
+$cid = empty($cid) ? 37 : intval($cid);
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,9 @@ $cid = empty($cid) ? 7 : intval($cid);
 <meta http-equiv="X-UA-Compatible" content="IE=9"> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <?php echo GetHeader(1,$cid); ?>
-<link rel="stylesheet" type="text/css" href="templates/cn/css/style.css">
-<script type="text/javascript" src="templates/cn/js/jquery.js"></script>
-<script type="text/javascript" src="templates/cn/js/ext.js"></script>
+<link rel="stylesheet" type="text/css" href="../templates/en/css/style.css">
+<script type="text/javascript" src="../templates/en/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
     <div class="body_bg"></div>
@@ -26,7 +26,7 @@ $cid = empty($cid) ? 7 : intval($cid);
                 </div>
                 <ul>
                     <?php
-                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=7 AND checkinfo=true ORDER BY orderid");
+                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=37 AND checkinfo=true ORDER BY orderid");
                         while($row = $dosql->GetArray())
                         {
                             //获取链接地址
@@ -47,7 +47,7 @@ $cid = empty($cid) ? 7 : intval($cid);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'video-7-1.html':'video.php'; ?>">产品视频</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'video-37-1.html':'video.php'; ?>">产品视频</a> > 
                     <?php if($cid == 1){ ?>
                     <a href="javascript:void(0);">所有视频</a>
                     <?php }else{ 
@@ -114,7 +114,7 @@ $cid = empty($cid) ? 7 : intval($cid);
     </div>
     <?php require_once('footer.php'); ?>
     <div class="mv_display_box">
-        <div class="close_mv"><a href="javascript:void(0);"><img src="templates/cn/images/product_01.png"/></a></div>
+        <div class="close_mv"><a href="javascript:void(0);"><img src="templates/en/images/product_01.png"/></a></div>
         <h3>立柱式发斯蒂芬斯蒂芬</h3>
         <div class="mv_source_box">
             <video id="video_mv" autoplay="autoplay">

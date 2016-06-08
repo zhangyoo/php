@@ -1,18 +1,17 @@
 <?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
+require_once(dirname(__FILE__).'/../include/config.inc.php');
 //初始化参数检测正确性
-$cid = empty($cid) ? 1 : intval($cid);
-$id  = empty($id)  ? 0 : intval($id);
+$cid = empty($cid) ? 31 : intval($cid);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=9"> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-<?php echo GetHeader(1,$cid,$id); ?>
-<link rel="stylesheet" type="text/css" href="templates/cn/css/style.css">
-<script type="text/javascript" src="templates/cn/js/jquery.js"></script>
-<script type="text/javascript" src="templates/cn/js/ext.js"></script>
+<?php echo GetHeader(1,$cid); ?>
+<link rel="stylesheet" type="text/css" href="../templates/en/css/style.css">
+<script type="text/javascript" src="../templates/en/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
     <?php require_once('header.php'); ?>
@@ -26,14 +25,14 @@ $id  = empty($id)  ? 0 : intval($id);
                 </div>
                 <ul>
                     <?php
-                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=1 AND checkinfo=true ORDER BY orderid");
+                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=31 AND checkinfo=true ORDER BY orderid");
                         while($row = $dosql->GetArray())
                         {
                             //获取链接地址
                             if($row['linkurl']=='' and $cfg_isreurl!='Y')
                                     $gourl = 'product.php?cid='.$row['id'];
                             else if($cfg_isreurl=='Y')
-                                    $gourl = 'product-'.$row['id'].'.html';
+                                    $gourl = 'product-'.$row['id'].'-1.html';
                             else
                                     $gourl = $row['linkurl'];
                     ?>
@@ -47,8 +46,10 @@ $id  = empty($id)  ? 0 : intval($id);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'product-1-1.html':'product.php'; ?>">产品中心</a> > 
-                    <?php if($cid!= 1){
+                    <a href="<?php echo $cfg_isreurl=='Y'?'product-31-1.html':'product.php'; ?>">产品中心</a> > 
+                    <?php if($cid == 1){ ?>
+                    <a href="javascript:void(0);">所有产品</a>
+                    <?php }else{ 
                            $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                            if($row['linkurl']=='' and $cfg_isreurl!='Y'){
                                $gourl = 'product.php?cid='.$row['id'];
@@ -57,35 +58,32 @@ $id  = empty($id)  ? 0 : intval($id);
                            }else{
                               $gourl = $row['linkurl']; 
                            }
-                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > ';    
+                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > <a href="javascript:void(0);">所有产品</a>';    
                            
                         }
                     ?>
-                    <?php
-                    //检测文档正确性
-                    $r = $dosql->GetOne("SELECT title,content FROM `#@__infoimg` WHERE id=$id");
-                    if(@$r)
-                    {
-                    //增加一次点击量
-                    $dosql->ExecNoneQuery("UPDATE `#@__infoimg` SET hits=hits+1 WHERE id=$id");
-                    $row = $dosql->GetOne("SELECT title,content FROM `#@__infoimg` WHERE id=$id");
-                    ?>
-                    <a href="javascript:void(0);"><?php echo $row['title']; ?></a>
                 </div>
                 <div class="right_main_content">
-                    <?php echo $row['content']; ?>
-                    <?php } ?>
-                </div>
-                <div class="talk_online">
-                    <span class="talk_online_tip">如果您有任何需要可在线联系我们或直接拨打免费热线：158-0090-2006&nbsp;&nbsp;我们将立即给您答复！</span>
-                    <span class="talk_online_icon"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes"><img src="templates/cn/images/product_03.png"/></a></span>
-                </div>
-                <div class="product_more_list right_main_content">
-                    <div class="product_more_list_title"><b>更多产品推荐</b></div>
+                    <div class="right_main_content_description">
+                        <?php
+                        $row = $dosql->GetOne("SELECT description FROM `#@__infoclass` WHERE id=".$cid);
+                        echo $row['description'];
+                        ?>
+                    </div>
                     <ul class="product_list_ul">
                         <?php
-                            $sql = "SELECT id,classid,picurl,title,linkurl FROM `#@__infoimg` WHERE classid=$cid AND delstate='' AND checkinfo=true ORDER BY orderid DESC limit 3";
-                            $dosql->Execute($sql);
+                            if(!empty($keyword))
+                            {
+                                    $keyword = htmlspecialchars($keyword);
+
+                                    $sql = "SELECT id,classid,picurl,title,linkurl FROM `#@__infoimg` WHERE (classid=$cid OR parentstr LIKE '%,$cid,%') AND title LIKE '%$keyword%' AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                            }
+                            else
+                            {
+                                    $sql = "SELECT id,classid,picurl,title,linkurl FROM `#@__infoimg` WHERE (classid=$cid OR parentstr LIKE '%,$cid,%') AND delstate='' AND checkinfo=true ORDER BY orderid DESC";
+                            }
+
+                            $dopage->GetPage($sql,9);
                             while($row = $dosql->GetArray())
                             {
                                     if($row['picurl'] != '') $picurl = $row['picurl'];
@@ -96,7 +94,7 @@ $id  = empty($id)  ? 0 : intval($id);
                                     else $gourl = $row['linkurl'];
                         ?>
                         <li>
-                            <a href=""><image src="<?php echo $row['picurl']; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
+                            <a href="<?php echo $gourl; ?>"><image src="<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
                             <p class="product_list_li_p"><a href="<?php echo $gourl; ?>"><?php echo $row['title']; ?></a></p>
                             <p class="contact_online"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
                         </li>
@@ -104,6 +102,9 @@ $id  = empty($id)  ? 0 : intval($id);
                             }
                         ?>
                     </ul>
+                </div>
+                <div class="page_info">
+                    <?php echo $dopage->GetList(); ?> 
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
+require_once(dirname(__FILE__).'/../include/config.inc.php');
 //初始化参数检测正确性
-$cid = empty($cid) ? 19 : intval($cid);
+$cid = empty($cid) ? 49 : intval($cid);
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,9 +9,9 @@ $cid = empty($cid) ? 19 : intval($cid);
 <meta http-equiv="X-UA-Compatible" content="IE=9"> 
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <?php echo GetHeader(1,$cid); ?>
-<link rel="stylesheet" type="text/css" href="templates/cn/css/style.css">
-<script type="text/javascript" src="templates/cn/js/jquery.js"></script>
-<script type="text/javascript" src="templates/cn/js/ext.js"></script>
+<link rel="stylesheet" type="text/css" href="../templates/en/css/style.css">
+<script type="text/javascript" src="../templates/en/js/jquery.js"></script>
+<script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
     <?php require_once('header.php'); ?>
@@ -25,7 +25,7 @@ $cid = empty($cid) ? 19 : intval($cid);
                 </div>
                 <ul>
                     <?php
-                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=19 AND checkinfo=true ORDER BY orderid");
+                        $dosql->Execute("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE parentid=49 AND checkinfo=true ORDER BY orderid");
                         while($row = $dosql->GetArray())
                         {
                             //获取链接地址
@@ -46,7 +46,7 @@ $cid = empty($cid) ? 19 : intval($cid);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'about-20.html':'about.php?cid=20'; ?>">关于企业</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'about-50.html':'index.php?cid=50'; ?>">关于企业</a> > 
                     <?php 
                         $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                         if($row['linkurl']=='' and $cfg_isreurl!='Y'){

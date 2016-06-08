@@ -46,7 +46,7 @@ $cid = empty($cid) ? 1 : intval($cid);
                 <div class="right_main_position">
                     当前位置：
                     <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'product.html':'product.php'; ?>">产品中心</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'product-1-1.html':'product.php'; ?>">产品中心</a> > 
                     <?php if($cid == 1){ ?>
                     <a href="javascript:void(0);">所有产品</a>
                     <?php }else{ 
