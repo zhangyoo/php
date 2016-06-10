@@ -21,7 +21,6 @@ $cid = empty($cid) ? 37 : intval($cid);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>产品视频</b></p>
                     <p class="nav_left_title_sub">PRODUCT VIDEO</p>
                 </div>
                 <ul>
@@ -45,11 +44,11 @@ $cid = empty($cid) ? 37 : intval($cid);
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'video-37-1.html':'video.php'; ?>">产品视频</a> > 
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'video-37-1.html':'video.php'; ?>">Video</a> > 
                     <?php if($cid == 1){ ?>
-                    <a href="javascript:void(0);">所有视频</a>
+                    <a href="javascript:void(0);">All Video</a>
                     <?php }else{ 
                            $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                            if($row['linkurl']=='' and $cfg_isreurl!='Y'){
@@ -59,7 +58,7 @@ $cid = empty($cid) ? 37 : intval($cid);
                            }else{
                               $gourl = $row['linkurl']; 
                            }
-                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > <a href="javascript:void(0);">所有视频</a>';    
+                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > <a href="javascript:void(0);">All Video</a>';    
                            
                         }
                     ?>
@@ -91,14 +90,14 @@ $cid = empty($cid) ? 37 : intval($cid);
                                     else $picurl = 'templates/default/images/nofoundpic.gif';
                         ?>
                         <li>
-                            <a class="vedio_list_li_img" href="javascript:void(0);"><image src="<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
+                            <a class="vedio_list_li_img" href="javascript:void(0);"><image src="../<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
                             <p class="vedio_list_li_p">
                                 <span class="vedio_list_li_left"><?php echo $row['title']; ?></span>
-                                <span class="vedio_list_li_right"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">在线咨询&nbsp;&nbsp;&nbsp;></a></span>
+                                <span class="vedio_list_li_right"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">contact online&nbsp;&nbsp;&nbsp;></a></span>
                             </p>
                             <div class="video_hover_box">
                                 <div class="video_hover_box_bg"></div>
-                                <div class="video_hover_box_icon" av="<?php echo $row['video']; ?>" title="<?php echo $row['title']; ?>"><img src="templates/cn/images/fla_hover.png"/></div>
+                                <div class="video_hover_box_icon" av="<?php echo $row['video']; ?>" title="<?php echo $row['title']; ?>"><img src="../templates/cn/images/fla_hover.png"/></div>
                             </div>
                         </li>
                         <?php
@@ -114,8 +113,8 @@ $cid = empty($cid) ? 37 : intval($cid);
     </div>
     <?php require_once('footer.php'); ?>
     <div class="mv_display_box">
-        <div class="close_mv"><a href="javascript:void(0);"><img src="templates/en/images/product_01.png"/></a></div>
-        <h3>立柱式发斯蒂芬斯蒂芬</h3>
+        <div class="close_mv"><a href="javascript:void(0);"><img src="../templates/en/images/product_01.png"/></a></div>
+        <h3>test title</h3>
         <div class="mv_source_box">
             <video id="video_mv" autoplay="autoplay">
                 <source src="" type="video/mp4" />
@@ -123,8 +122,8 @@ $cid = empty($cid) ? 37 : intval($cid);
             </video>
         </div>
         <div class="talk_online_inherit">
-            <span class="talk_online_tip">如果您有任何需要可在线联系我们或直接拨打免费热线：158-0090-2006&nbsp;&nbsp;我们将立即给您答复！</span>
-            <span class="talk_online_icon"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes"><img src="templates/cn/images/product_03.png"/></a></span>
+            <span class="talk_online_tip">If you have any need to contact us directly or directly call toll free：158-0090-2006, We will give you a reply immediately!</span>
+            <span class="talk_online_icon"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes"><img width="112" height="27" src="../templates/en/images/product_03.png"/></a></span>
         </div>
     </div>
     <script type="text/javascript">
@@ -134,7 +133,7 @@ $cid = empty($cid) ? 37 : intval($cid);
             var objSrc = $obj.attr("av");
             var objTitle = $obj.attr("title");
             if(objSrc == ""){
-                alert("没有找到可用的视频资源");
+                alert("No available video resources found");
                 return false;
             }
             html = '<video id="video_mv" autoplay="autoplay">'

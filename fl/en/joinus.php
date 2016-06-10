@@ -20,16 +20,15 @@ $cid = empty($cid) ? 51 : intval($cid);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>加入我们</b></p>
                     <p class="nav_left_title_sub">JOIN US</p>
                 </div>
                 <?php require_once('leftnav.php'); ?>
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="javascript:void(0);">加入我们</a>
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="javascript:void(0);">Join Us</a>
                 </div>
                 <div class="right_main_content">
                     <?php echo Info($cid); ?>

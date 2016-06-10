@@ -566,7 +566,7 @@ function GetNav($pid=1)
 		else
 			$classname = $row['classname'];
 
-		$str .= '<li><a href="'.$gourl.'"';
+		$str .= '<li class="first_li"><a class="first_a" href="'.$gourl.'"';
 
 		if($row['target'] != '')
 			$str .= ' target="'.$row['target'].'"';
@@ -605,7 +605,7 @@ function GetSubNav($id)
 			$classname = $row['classname'];
 
 
-		$str .= '<li><a href="'.$gourl.'"';
+		$str .= '<li><a class="second_a" href="'.$gourl.'"';
 
 		if($row['target'] != '')
 			$str .= ' target="'.$row['target'].'"';

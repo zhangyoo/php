@@ -20,7 +20,6 @@ $cid = empty($cid) ? 49 : intval($cid);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>关于企业</b></p>
                     <p class="nav_left_title_sub">ABOUT ENTERPRISE</p>
                 </div>
                 <ul>
@@ -44,9 +43,9 @@ $cid = empty($cid) ? 49 : intval($cid);
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'about-50.html':'index.php?cid=50'; ?>">关于企业</a> > 
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'about-50.html':'index.php?cid=50'; ?>">About Us</a> > 
                     <?php 
                         $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                         if($row['linkurl']=='' and $cfg_isreurl!='Y'){

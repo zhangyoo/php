@@ -20,16 +20,15 @@ $cid = empty($cid) ? 43 : intval($cid);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>行业应用</b></p>
                     <p class="nav_left_title_sub">INDUSTRY APPLICATION</p>
                 </div>
                 <?php require_once('leftnav.php'); ?>
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="javascript:void(0);">行业应用</a>
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="javascript:void(0);">Solution</a>
                 </div>
                 <div class="right_main_content">
                     <div class="right_main_content_description">
@@ -40,7 +39,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                     </div>
                     
                     <div class="common_use_list_box">
-                        <h3>玻璃类应用场景</h3>
+                        <h3>Glass application scenarios </h3>
                         <div class="img-scroll">
                             <span class="prev">prev</span>
                             <span class="next">next</span>
@@ -54,7 +53,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                                                 if($row['picurl'] != '') $picurl = $row['picurl'];
                                                 else $picurl = 'templates/default/images/nofoundpic.gif';
                                     ?>
-                                    <li><img src="<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
+                                    <li><img src="../<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
                                     <?php
                                         }
                                     ?>
@@ -63,7 +62,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                         </div>
                     </div>
                     <div class="common_use_list_box">
-                        <h3>汽车类应用场景</h3>
+                        <h3>Automotive application scenari </h3>
                         <div class="img-scroll">
                             <span class="prev">prev</span>
                             <span class="next">next</span>
@@ -77,7 +76,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                                                 if($row['picurl'] != '') $picurl = $row['picurl'];
                                                 else $picurl = 'templates/default/images/nofoundpic.gif';
                                     ?>
-                                    <li><img src="<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
+                                    <li><img src="../<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
                                     <?php
                                         }
                                     ?>
@@ -86,7 +85,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                         </div>
                     </div>
                     <div class="common_use_list_box">
-                        <h3>陶瓷卫浴类应用场景</h3>
+                        <h3>Ceramic sanitary ware applicat</h3>
                         <div class="img-scroll">
                             <span class="prev">prev</span>
                             <span class="next">next</span>
@@ -100,7 +99,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                                                 if($row['picurl'] != '') $picurl = $row['picurl'];
                                                 else $picurl = 'templates/default/images/nofoundpic.gif';
                                     ?>
-                                    <li><img src="<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
+                                    <li><img src="../<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
                                     <?php
                                         }
                                     ?>
@@ -109,7 +108,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                         </div>
                     </div>
                     <div class="common_use_list_box">
-                        <h3>化工类应用场景</h3>
+                        <h3>Application scenario of chemic</h3>
                         <div class="img-scroll">
                             <span class="prev">prev</span>
                             <span class="next">next</span>
@@ -123,7 +122,7 @@ $cid = empty($cid) ? 43 : intval($cid);
                                                 if($row['picurl'] != '') $picurl = $row['picurl'];
                                                 else $picurl = 'templates/default/images/nofoundpic.gif';
                                     ?>
-                                    <li><img src="<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
+                                    <li><img src="../<?php echo $picurl ?>" alt="<?php echo $row['title'] ?>" title="<?php echo $row['title'] ?>" /></li>
                                     <?php
                                         }
                                     ?>

@@ -9,7 +9,7 @@
                             if($row['linkurl'] != '')$gourl = $row['linkurl'];
                             else $gourl = 'javascript:;';
                 ?>
-                <li><a href="<?php echo $gourl; ?>" target="_blank"><img src="<?php echo $row['picurl']; ?>" alt="<?php echo $row['title']; ?>" /></a></li>
+                <li><a href="<?php echo $gourl; ?>" target="_blank"><img src="../<?php echo $row['picurl']; ?>" alt="<?php echo $row['title']; ?>" /></a></li>
                 <?php
                     }
                 ?>
@@ -65,18 +65,21 @@
         });
         </script>
         <div class="banner_hover">
-            <div class="banner_bottom_bg"></div>
-            <div class="banner_bottom_content">
+            <div class="bh_left">
+                <div class="banner_bottom_bg"></div>
                 <form action="product.php" method="GET" class="banner_hover_left">
                     <input class="search_text" type="text" name="keyword" value="<?php if(isset($keyword)){echo $keyword;} ?>"/>
                     <input class="search_submit" type="submit" value="提交" />
                 </form>
+            </div>
+            <div class="bh_right">
+                <div class="banner_bottom_bg"></div>
                 <div class="banner_hover_right">
-                    <p>服务热线</p>
-                    <p class="number_num">158-0090-2006</p>
-                    <p>我们为您提供专业的搬运解决方案</p>
-                    <p><img src="templates/en/images/weixin_icon.gif"/></p>
-                    <p>搜索费兰关注我们</p>
+                    <p>&nbsp;</p>
+                    <p class="number_num" style="font-weight: normal;font-size: 12px;">CONTACT US</p>
+                    <p style="font-size: 20px;">+86-158-0090-2006</p>
+                    <p style="font-size: 20px;">+86-21-50311307</p>
+                    <p>&nbsp;</p>
                 </div>
             </div>
         </div>

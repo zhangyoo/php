@@ -21,16 +21,15 @@ $id  = empty($id)  ? 0 : intval($id);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>新闻中心</b></p>
                     <p class="nav_left_title_sub">NEWS</p>
                 </div>
                 <?php require_once('leftnav.php'); ?>
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'news-48-1.html':'news.php'; ?>">新闻中心</a> > 
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'news-48-1.html':'news.php'; ?>">News</a> > 
                     <?php
                     //检测文档正确性
                     $r = $dosql->GetOne("SELECT title,content FROM `#@__infolist` WHERE id=$id");

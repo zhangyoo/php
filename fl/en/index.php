@@ -34,10 +34,10 @@
             ?>
             <li>
                 <a href="<?php echo $gourl; ?>">
-                    <img src="<?php echo $picurl; ?>" alt="<?php echo $row['classname']; ?>" title="<?php echo $row['classname']; ?>"/>
+                    <img src="../<?php echo $picurl; ?>" alt="<?php echo $row['classname']; ?>" title="<?php echo $row['classname']; ?>"/>
                 </a>
                 <p class="pro_title"><?php echo $row['classname']; ?></p>
-                <p class="click_more_description"><?php echo mb_substr($row['description'],0,76,'utf-8'); ?><?php echo strlen($row['description'])>200?'......':''; ?></p>
+                <p class="click_more_description"><?php echo mb_substr($row['description'],0,152,'utf-8'); ?><?php echo strlen($row['description'])>152?'......':''; ?></p>
                 <p class="click_more_icon"><a href="<?php echo $gourl; ?>">了解更多</a></p>
             </li>
             <?php
@@ -46,11 +46,11 @@
         </ul>
         <div class="news_about_mv">
             <div class="news_list_index">
-                <p class="news_list_title">新闻中心 News</p>
+                <p class="news_list_title">News</p>
                 <p class="news_list_decription">
                     <?php
                     $row = $dosql->GetOne("SELECT description FROM `#@__infoclass` WHERE id=48");
-                    echo mb_substr($row['description'],0,50,'utf-8');
+                    echo mb_substr($row['description'],0,100,'utf-8');
                     echo strlen($row['description'])>100?'......':'';
                     ?>
                 </p>
@@ -72,19 +72,19 @@
                         }
                     ?>
                 </ul>
-                <p class="news_list_more_icon"><a href="<?php echo $cfg_isreurl!='Y'?'news.php':'news-18-1.html'; ?>">查看更多>></a></p>
+                <p class="news_list_more_icon"><a href="<?php echo $cfg_isreurl!='Y'?'news.php':'news-18-1.html'; ?>">More >></a></p>
             </div>
             <div class="aboutus_index">
-                <p class="news_list_title">公司简介 Company</p>
+                <p class="news_list_title">Company</p>
                 <p><img src="<?php
-                    $picurl = InfoPic(50);
+                    $picurl = "../".InfoPic(50);
                     echo empty($picurl) ? '../templates/default/images/nofoundpic.gif':$picurl; 
                     
                     ?>" width="224" height="108"/></p>
                 <p class="about_description"><?php
                     $infos = Info(50);
-                    echo mb_substr($infos,0,100,'utf-8');
-                    echo strlen($infos)>210?'......':''; 
+                    echo mb_substr($infos,0,190,'utf-8');
+                    echo strlen($infos)>190?'......':''; 
                         ?></p>
             </div>
             <div class="mv_index">
@@ -109,7 +109,7 @@
                             {
                         ?>
                         <div class="pic">
-                            <a title="<?php echo $row['title']; ?>" href="javascript:void(0);"><img alt="" src="<?php echo $row['picurl']; ?>"  /></a>
+                            <a title="<?php echo $row['title']; ?>" href="javascript:void(0);"><img alt="" src="../<?php echo $row['picurl']; ?>"  /></a>
                             <p><?php echo $row['title']; ?></p>
                         </div> 
                         <?php

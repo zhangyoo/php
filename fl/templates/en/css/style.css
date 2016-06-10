@@ -46,19 +46,26 @@ header{margin: 0 auto;width: 1200px;}
 .top{width: 1200px;position:absolute;top:0;z-index: 10;background: #ffffff}
 .logo{float:left;}
 .nav{float: right;}
-.nav li{float:left;line-height: 89px;height:89px;}
-.nav li a{padding: 0 25px;color:#565656}
-.nav li:hover a{color:#1F90D2}
+.nav li{float:left;line-height: 89px;height:89px;position:relative}
+.nav li a{padding: 5px 25px;color:#565656}
+.nav li:hover a.first_a{background:#1F90D2;color:#fff}
+.nav_sub{position: absolute;top: 89px;width: 180%;background: #fff;display:none;}
+.nav_sub li{float:left;width: 100%;line-height: 30px;height:30px;}
+.nav_sub li:hover{background:#1F90D2;}
+.nav_sub li:hover a.second_a{color:#fff}
+.nav .first_li:hover .nav_sub{display: block}
 /*banner*/
 .banner{margin: 0 auto;height: 518px;overflow: hidden;background:url(../images/banner_01.gif) no-repeat center center}
 .banner_content{position:relative;width: 1200px;margin: 0 auto;height: 518px;}
-.banner_hover{width:1200px;height:190px;bottom: 0;position: absolute;z-index: 2;display: none}
+.banner_hover{width:1200px;height:190px;bottom: 0;position: absolute;z-index: 2;}
 .banner_bottom_bg{width:100%;height:100%;background: #000000;opacity: 0.3;}
-.banner_bottom_content{position:absolute;left:0;bottom:0;width:100%;height:100%;z-index: 3;}
-.banner_hover_left{float: left;padding: 110px 0 0 40px;}
+.bh_left{float:left;width:75%;height: 100%;position: relative;display: none}
+.bh_right{float:right;width:25%;height: 100%;position: relative}
+.bh_right  .banner_bottom_bg{opacity: 0.4;}
+.banner_hover_left{position:absolute;left:40px;top:110px;z-index: 3;}
 .banner_hover_left .search_text{width: 715px;line-height: 23px;border:0;padding: 2px;}
 .banner_hover_left .search_submit{width: 31px;height:27px;text-indent: 200px;margin-left: 3px;border:0;background:url(../images/product_04.gif) no-repeat center center}
-.banner_hover_right{float: right;padding: 30px 50px 20px 0;}
+.banner_hover_right{position:absolute;top:30px;right:50px;z-index: 3;}
 .banner_hover_right p{text-align: center;color: #ffffff;line-height: 28px;}
 .banner_hover_right .number_num{font-size: 30px;}
 
@@ -100,6 +107,7 @@ header{margin: 0 auto;width: 1200px;}
 .news_list_index ul{padding: 0}
 .news_list_index ul li{line-height: 25px;width: 300px;overflow: hidden}
 .news_list_index ul li a{color: #ffffff}
+.news_list_index ul li a:hover{text-decoration: underline}
 .news_list_more_icon{float: right;margin-top: 10px;}
 .news_list_more_icon a{color: #ffffff}
 .aboutus_index{float: left;width:230px;padding: 30px 20px 0 40px;box-sizing:content-box}
@@ -134,7 +142,7 @@ footer{float: left;width: 100%;background: #191A21;color: #ffffff}
 .nav_left_title{float: left;width: 100%;border-bottom: 2px solid #E9EAEE;padding: 20px 0 5px;}
 .nav_left_title p{line-height: 18px}
 .nav_left_title p b{font-size: 20px;}
-.nav_left_title_sub{color:#F5900E}
+.nav_left_title_sub{color:#F5900E;font-size: 22px;}
 .nav_left ul{float: left;width: 100%;padding-top: 10px;}
 .nav_left ul li{float: left;width: 70%;font-size: 14px;line-height: 35px;text-align: left;padding-left: 30%;border-bottom: 1px solid #E9EAEE;}
 .nav_left ul li a{color:#515050}

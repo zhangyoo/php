@@ -1,7 +1,7 @@
 $(function(){
     $(".banner").hover(function(){
-        $(".banner_hover").show();
+        $(".bh_left").show();
     },function(){
-        $(".banner_hover").hide();
+        $(".bh_left").hide();
     })
 })

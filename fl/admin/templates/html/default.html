@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="Page-Enter" content="blendTrans(Duration=0.3)" />
 <meta http-equiv="Page-Exit" content="blendTrans(Duration=0.3)" />
-<title><?php echo $cfg_webname; ?> - PHPMyWind 管理中心</title>
+<title><?php echo $cfg_webname; ?> - 管理中心</title>
 <link href="templates/style/frame.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="templates/js/jquery.min.js"></script>
 <script type="text/javascript" src="templates/js/frame.js"></script>
@@ -59,10 +59,10 @@ else
 	<div class="user">
 		<span class="name">Hi, <?php echo $_SESSION['admin']; ?></span>
 		<div class="userPanel">
-			<a href="javascript:;" class="arrow"></a>
+			<!--<a href="javascript:;" class="arrow"></a>-->
 			<div class="panel">
 				<div class="warp">
-					<div class="txt">您是尊贵的<?php $r = $dosql->GetOne("SELECT `groupname` FROM `#@__admingroup` WHERE `id`=".$_SESSION['adminlevel']);echo ($levelname = isset($r['groupname']) ? $r['groupname'] : '未启用的组'); ?></div>
+<!--					<div class="txt">您是尊贵的<?php $r = $dosql->GetOne("SELECT `groupname` FROM `#@__admingroup` WHERE `id`=".$_SESSION['adminlevel']);echo ($levelname = isset($r['groupname']) ? $r['groupname'] : '未启用的组'); ?></div>
 					<div class="priv"><strong>权限切换</strong><br />
 					<?php
 					$dosql->Execute("SELECT * FROM `#@__admingroup` WHERE `checkinfo`='true' ORDER BY id ASC");
@@ -71,7 +71,7 @@ else
 						echo '<a href="javascript:;" onclick="SelPrivID('.$row['id'].');" title="切换到'.$row['groupname'].'身份">'.ReStrLen($row['groupname'],5).'</a>';
 					}
 					?>
-					</div>
+					</div>-->
 					<div class="info">
 						<div><strong>本次登录</strong><br /><?php echo MyDate('Y-m-d H:i',$_SESSION['logintime']); ?></div>
 						<div><strong>上次登录</strong><br /><?php echo MyDate('Y-m-d H:i',$_SESSION['lastlogintime']).'&nbsp;&nbsp;'.$_SESSION['lastloginip']; ?></div>
@@ -109,7 +109,7 @@ else
 		</div>
 		<a href="../" target="_blank" class="homeLink df" title="网站首页">网站首页</a>
 		<a href="javascript:;" id="lockscreen" class="lockScreen df" title="锁屏">锁屏</a>
-		<div class="quick"> <a href="home.php" target="main" class="quickNav df" title="快捷导航&#10;点击回到系统首页">快捷导航</a>
+<!--		<div class="quick"> <a href="home.php" target="main" class="quickNav df" title="快捷导航&#10;点击回到系统首页">快捷导航</a>
 			<div class="quickmenu">
 				<div class="warp">
 					<div class="col">
@@ -284,7 +284,7 @@ else
 				</div>
 			</div>
 		</div>
-		<a href="http://phpmywind.com/" target="_blank" class="webLink df" title="官方网站">官方网站</a>
+		<a href="http://phpmywind.com/" target="_blank" class="webLink df" title="官方网站">官方网站</a>-->
 	</div>
 </div>
 <div class="left">
@@ -306,7 +306,7 @@ else
 			<span class="note">&nbsp;</span>
 		</div>
 	</div>
-	<div class="copyright">© 2015 phpMyWind.com</div>
+	<div class="copyright">Feland intelligent equipment(shanghai)Co.Ltd Copyright 1998-2014</div>
 </div>
 </body>
 </html>

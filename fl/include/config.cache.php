@@ -2,7 +2,7 @@
 
 $cfg_webname = '费兰智能设备（上海）有限公司';
 $cfg_weburl = 'http://www.fl.com';
-$cfg_webpath = '/php/fl';
+$cfg_webpath = '/';
 $cfg_author = '';
 $cfg_generator = 'PHPMyWind CMS';
 $cfg_seotitle = '';
@@ -19,7 +19,7 @@ $cfg_upload_media_type = 'swf|flv|mpg|mp3|rm|rmvb|wmv|wma|wav';
 $cfg_max_file_size = '2097152';
 $cfg_imgresize = 'Y';
 $cfg_countcode = '';
-$cfg_qqcode = '1069839704';
+$cfg_qqcode = '11111111';
 $cfg_mysql_type = 'mysql';
 $cfg_pagenum = '20';
 $cfg_timezone = '8';
@@ -31,7 +31,7 @@ $cfg_maintype = 'N';
 $cfg_typefold = 'Y';
 $cfg_quicktool = 'Y';
 $cfg_diserror = 'Y';
-$cfg_isreurl = 'N';
+$cfg_isreurl = 'Y';
 $cfg_reurl_index = 'index.html';
 $cfg_reurl_about = '{about}-{cid}-{page}.html';
 $cfg_reurl_news = '{news}-{cid}-{page}.html';

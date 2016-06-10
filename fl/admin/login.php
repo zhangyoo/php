@@ -308,12 +308,12 @@ $(function(){
 
 <body class="loginBody">
 <div class="loginTop" <?php echo GetLoginBg(); ?>>
-	<div class="logo"><a href="http://phpmywind.com" target="_blank"></a></div>
+<!--	<div class="logo"><a href="http://phpmywind.com" target="_blank"></a></div>
 	<div class="text"><span class="note">
 		<?php if(strstr(GetCurUrl(), '/admin/login')) echo '提示：您的后台路径为/<i>admin</i>/，建议更改为更加安全的路径！'; ?>
 		</span>
 		<?php if($cfg_author != '') echo '<i>Author : '.$cfg_author.'</i><span class="line">|</span>'; ?>
-		访问 <i><a href="http://phpmywind.com/" target="_blank" class="link">phpMyWind.com</a></i><span class="line">|</span><a href="http://phpmywind.com/bbs/" target="_blank">帮助</a></div>
+		访问 <i><a href="http://phpmywind.com/" target="_blank" class="link">phpMyWind.com</a></i><span class="line">|</span><a href="http://phpmywind.com/bbs/" target="_blank">帮助</a></div>-->
 </div>
 <div class="loginWarp">
 	<div class="loginArea">
@@ -329,7 +329,7 @@ $(function(){
 					<label>密码</label>
 					<input type="password" name="password" id="password" class="pwd input" maxlength="16" />
 				</div>
-				<div class="quesArea">
+<!--				<div class="quesArea">
 					<select name="question" id="question" class="question">
 						<option value="0">无安全提问</option>
 						<option value="1">母亲的名字</option>
@@ -345,14 +345,14 @@ $(function(){
 						<input type="text" name="answer" id="answer" class="answer" />
 					</div>
 				</div>
-				<div class="hr_1"></div>
+				<div class="hr_1"></div>-->
 				<input type="submit" class="loginBtn" value="登 陆" style="cursor:pointer;" />
 				<input type="hidden" name="dopost" value="login" />
 			</form>
-			<div class="loginThanks">感谢您使用<span>PHPMyWind</span>产品</div>
+			<!--<div class="loginThanks">感谢您使用<span>PHPMyWind</span>产品</div>-->
 		</div>
 	</div>
 </div>
-<div class="loginCopyright">© 2015 phpMyWind.com</div>
+<div class="loginCopyright">Feland intelligent equipment(shanghai)Co.Ltd Copyright 1998-2014</div>
 </body>
 </html>

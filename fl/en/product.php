@@ -20,7 +20,6 @@ $cid = empty($cid) ? 31 : intval($cid);
         <div class="no_index">
             <div class="nav_left">
                 <div class="nav_left_title">
-                    <p><b>产品中心</b></p>
                     <p class="nav_left_title_sub">PRODUCT CENTER</p>
                 </div>
                 <ul>
@@ -44,11 +43,11 @@ $cid = empty($cid) ? 31 : intval($cid);
             </div>
             <div class="right_main">
                 <div class="right_main_position">
-                    当前位置：
-                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">首页</a> > 
-                    <a href="<?php echo $cfg_isreurl=='Y'?'product-31-1.html':'product.php'; ?>">产品中心</a> > 
+                    Location：
+                    <a href="<?php echo $cfg_isreurl=='Y'?'index.html':'index.php'; ?>">Home</a> > 
+                    <a href="<?php echo $cfg_isreurl=='Y'?'product-31-1.html':'product.php'; ?>">Products</a> > 
                     <?php if($cid == 1){ ?>
-                    <a href="javascript:void(0);">所有产品</a>
+                    <a href="javascript:void(0);">All Products</a>
                     <?php }else{ 
                            $row = $dosql->GetOne("SELECT id,classname,linkurl FROM `#@__infoclass` WHERE id=".$cid);  
                            if($row['linkurl']=='' and $cfg_isreurl!='Y'){
@@ -58,7 +57,7 @@ $cid = empty($cid) ? 31 : intval($cid);
                            }else{
                               $gourl = $row['linkurl']; 
                            }
-                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > <a href="javascript:void(0);">所有产品</a>';    
+                           echo '<a href="'.$gourl.'">'.$row['classname'].'</a> > <a href="javascript:void(0);">All Products</a>';    
                            
                         }
                     ?>
@@ -94,9 +93,9 @@ $cid = empty($cid) ? 31 : intval($cid);
                                     else $gourl = $row['linkurl'];
                         ?>
                         <li>
-                            <a href="<?php echo $gourl; ?>"><image src="<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
+                            <a href="<?php echo $gourl; ?>"><image src="../<?php echo $picurl; ?>" alt="<?php echo $row['title']; ?>" title="<?php echo $row['title']; ?>"/></a>
                             <p class="product_list_li_p"><a href="<?php echo $gourl; ?>"><?php echo $row['title']; ?></a></p>
-                            <p class="contact_online"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">在线咨询&nbsp;&nbsp;&nbsp;></a></p>
+                            <p class="contact_online"><a href="tencent://message/?uin=<?php echo $cfg_qqcode; ?>&Site=费兰官网&Menu=yes">contact online&nbsp;&nbsp;&nbsp;></a></p>
                         </li>
                         <?php
                             }
