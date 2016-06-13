@@ -114,7 +114,7 @@ $cid = empty($cid) ? 37 : intval($cid);
     <?php require_once('footer.php'); ?>
     <div class="mv_display_box">
         <div class="close_mv"><a href="javascript:void(0);"><img src="../templates/en/images/product_01.png"/></a></div>
-        <h3>test title</h3>
+        <h3>title</h3>
         <div class="mv_source_box">
             <video id="video_mv" autoplay="autoplay">
                 <source src="" type="video/mp4" />

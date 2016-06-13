@@ -14,6 +14,7 @@ $cid = empty($cid) ? 43 : intval($cid);
 <script type="text/javascript" src="../templates/en/js/ext.js"></script>
 </head>
 <body>
+    <div class="body_bg"></div>
     <?php require_once('header.php'); ?>
     <?php require_once('morebanner.php'); ?>
     <div class="main">
@@ -167,5 +168,33 @@ $cid = empty($cid) ? 43 : intval($cid);
         </div>
     </div>
     <?php require_once('footer.php'); ?>
+    <div class="mv_display_box">
+        <div class="close_mv"><a href="javascript:void(0);"><img src="../templates/cn/images/product_01.png"/></a></div>
+        <h3>默认标题</h3>
+        <div class="mv_source_box" style="background: #D4D4D4">
+            <img width="100%" src="../templates/default/images/nofoundpic.gif"/>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(".img-list ul li").click(function(){
+            var html = '';
+            var $obj = $(this);
+            var objSrc = $obj.find("img").attr("src");
+            var objTitle = $obj.find("img").attr("title");
+            if(objSrc == ""){
+                alert("该图片不可用");
+                return false;
+            }
+            html = '<img src="'+objSrc+'"  />';
+            $(".mv_display_box h3").text(objTitle);
+            $(".mv_source_box").html(html);
+            $(".body_bg").show();
+            $(".mv_display_box").show();
+        })
+        $(".close_mv a").click(function(){
+            $(".mv_display_box").hide();
+            $(".body_bg").hide();
+        })
+    </script>
 </body>
 </html>

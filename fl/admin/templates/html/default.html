@@ -55,11 +55,11 @@ else
 </head>
 <body>
 <div class="header">
-	<a href="javascript:;" id="logo" class="logo"></a>
+	<!--<a href="javascript:;" id="logo" class="logo"></a>-->
 	<div class="user">
 		<span class="name">Hi, <?php echo $_SESSION['admin']; ?></span>
 		<div class="userPanel">
-			<!--<a href="javascript:;" class="arrow"></a>-->
+			<a href="javascript:;" class="arrow"></a>
 			<div class="panel">
 				<div class="warp">
 <!--					<div class="txt">您是尊贵的<?php $r = $dosql->GetOne("SELECT `groupname` FROM `#@__admingroup` WHERE `id`=".$_SESSION['adminlevel']);echo ($levelname = isset($r['groupname']) ? $r['groupname'] : '未启用的组'); ?></div>

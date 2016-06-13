@@ -115,7 +115,7 @@ $cid = empty($cid) ? 7 : intval($cid);
     <?php require_once('footer.php'); ?>
     <div class="mv_display_box">
         <div class="close_mv"><a href="javascript:void(0);"><img src="templates/cn/images/product_01.png"/></a></div>
-        <h3>立柱式发斯蒂芬斯蒂芬</h3>
+        <h3>默认标题</h3>
         <div class="mv_source_box">
             <video id="video_mv" autoplay="autoplay">
                 <source src="" type="video/mp4" />

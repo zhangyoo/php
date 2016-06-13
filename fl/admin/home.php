@@ -45,14 +45,14 @@ $(function(){
 <body>
 <div class="homeHeader">
 	<div class="header"><span class="title">首页</span><a href="javascript:location.reload();" class="reload">刷新</a></div>
-	<div class="news">
+<!--	<div class="news">
 		<div class="title">官方公告</div >
 		<div id="showad"> </div>
-	</div>
+	</div>-->
 </div>
 <div class="homeCont">
 	<div class="leftArea">
-		<div class="homeQuick">
+<!--		<div class="homeQuick">
 			<h2 class="title">快捷<span><a href="lnk.php">更多&gt;&gt;</a></span></h2>
 			<div class="lnkarea">
 				<?php
@@ -66,7 +66,7 @@ $(function(){
 				?>
 				<div class="cl"></div>
 			</div>
-		</div>
+		</div>-->
 		<div class="site">
 			<h2 class="title">系统</h2>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -92,7 +92,7 @@ $(function(){
 		</div>
 	</div>
 	<div class="rightArea">
-		<div class="homeEvent">
+<!--		<div class="homeEvent">
 			<h2 class="title">日志<span><a href="sysevent.php">更多&gt;&gt;</a></span></h2>
 			<ul>
 				<?php
@@ -142,9 +142,12 @@ $(function(){
 				}
 				?>
 			</ul>
-		</div>
+		</div>-->
 		<div class="count">
-			<h2 class="title">统计<span><a href="syscount.php">更多&gt;&gt;</a></span></h2>
+			<h2 class="title">
+                            统计
+                            <!--<span><a href="syscount.php">更多&gt;&gt;</a></span>-->
+                        </h2>
 			<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				<tr>
 					<td width="80" height="33">网站栏目数：</td>
@@ -174,7 +177,7 @@ $(function(){
 	</div>
 	<div class="cl"></div>
 </div>
-<div class="homeTeam">
+<!--<div class="homeTeam">
 	<h2 class="title">团队</h2>
 	<ul>
 		<li><strong>程序开发及交互设计：</strong> <i>Feng</i> · <i>Adu</i></li>
@@ -199,7 +202,7 @@ $(function(){
 		?></textarea>
 	</div>
 </div>
-<div class="homeCopy"> 敬请您将在使用中发现的问题或者不适提交给我们，以便改进 <a href="http://phpmywind.com/bbs/" target="_blank" class="feedback">点击提交反馈</a> | <a href="help.php" class="doc">开发帮助</a> </div>
+<div class="homeCopy"> 敬请您将在使用中发现的问题或者不适提交给我们，以便改进 <a href="http://phpmywind.com/bbs/" target="_blank" class="feedback">点击提交反馈</a> | <a href="help.php" class="doc">开发帮助</a> </div>-->
 <?php
 function ShowResult($revalue)
 {
