@@ -88,8 +88,28 @@
                         ?></p>
             </div>
             <div class="mv_index">
-                <img src="../templates/en/images/index_mv.gif" alt="" title=""/>
+                <video id="video_mv_box">
+                    <?php
+                    $row = $dosql->GetOne("SELECT video,video_title FROM `#@__info` WHERE classid=50");
+                    $video_address = $row['video'];
+                    $video_title = $row['video_title'];
+                    ?>
+                    <source src="<?php echo $video_address; ?>" type="video/mp4" />
+                    Your browser does not support HTML5 video.
+                </video>
+                <div class="mv_title"><?php echo $video_title; ?></div>
+                <div class="mv_hover_img"></div>
             </div>
+            <script type="text/javascript">
+                $(".mv_hover_img").click(function(){
+                    var myVideo=document.getElementById("video_mv_box");
+                    if (myVideo.paused){
+                        myVideo.play(); 
+                    }else{
+                        myVideo.pause();
+                    }
+                })
+            </script>
         </div>
     </div>
     <div class="company_cooperation">
