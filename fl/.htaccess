@@ -1,4 +1,4 @@
-# 将 RewriteEngine 模式打开
+﻿# 将 RewriteEngine 模式打开
 RewriteEngine On
 
 # 修改以下语句中的 / 改为您的系统目录地址，如果程序放在根目录中则无需修改
@@ -49,5 +49,39 @@ RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^en/video-([0-9]+)-([0-9]+)\.html$ en/video.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^en/videodetail-([0-9]+)-([0-9]+)\.html$ en/videodetail.php?cid=$1&id=$2
-RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^(\w+)\.html$ $1.php?
+
+# 老网站收录链接做跳转
+
+RewriteRule ^product/pinfo-(.*).html$ location.php?go=product-1-1.html
+
+RewriteRule ^product/pinfopage-(.*)-(.*).html$ location.php?go=product-1-1.html
+
+RewriteRule ^app/appinfo-(.*).html$ location.php?go=industryapplication.html
+
+RewriteRule ^app/app.html$ location.php?go=industryapplication.html
+
+RewriteRule ^app/appinfopage-(.*)-(.*).html$ location.php?go=industryapplication.html
+
+RewriteRule ^case/caseinfo-(.*).html$ location.php?go=industryapplication.html
+
+RewriteRule ^case/caseinfopage-(.*)-(.*).html$ location.php?go=industryapplication.html
+
+RewriteRule ^about/about-(.*).html$ location.php?go=about-20.html
+
+RewriteRule ^news/news-(.*).html$ location.php?go=news-18-1.html
+
+RewriteRule ^news/newspage-(.*).html$ location.php?go=news-18-1.html
+
+RewriteRule ^en/product/pinfo-(.*).html$ location.php?go=en/product-31-1.html
+
+RewriteRule ^en/app/appinfo-(.*).html$ location.php?go=en/industryapplication.html
+
+RewriteRule ^en/case/caseinfo-(.*).html$ location.php?go=en/industryapplication.html
+
+RewriteRule ^en/case/caseinfopage-(.*)-(.*).html$ location.php?go=en/industryapplication.html
+
+RewriteRule ^en/about/about-(.*).html$ location.php?go=en/about-50.html
+
+RewriteRule ^en/news/news-(.*).html$ location.php?go=en/news-48-1.html
+
+RewriteRule ^en/news/newspage-(.*).html$ location.php?go=en/news-48-1.html
