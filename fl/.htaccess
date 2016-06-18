@@ -22,7 +22,7 @@ RewriteRule ^newsdetail-([0-9]+)-([0-9]+)\.html$ newsdetail.php?cid=$1&id=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^product-([0-9]+)-([0-9]+)\.html$ product.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^productdetail-([0-9]+)-([0-9]+)\.html$ productdetail.php?cid=$1&id=$2
+RewriteRule ^productdetail-([0-9]+)-([0-9]+)-([0-9]+)\.html$ productdetail.php?cid=$1&id=$2&page=$3
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^video-([0-9]+)-([0-9]+)\.html$ video.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
@@ -44,7 +44,7 @@ RewriteRule ^en/newsdetail-([0-9]+)-([0-9]+)\.html$ en/newsdetail.php?cid=$1&id=
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^en/product-([0-9]+)-([0-9]+)\.html$ en/product.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$
-RewriteRule ^en/productdetail-([0-9]+)-([0-9]+)\.html$ en/productdetail.php?cid=$1&id=$2
+RewriteRule ^en/productdetail-([0-9]+)-([0-9]+)-([0-9]+)\.html$ en/productdetail.php?cid=$1&id=$2&page=$3
 RewriteCond %{QUERY_STRING} ^(.*)$
 RewriteRule ^en/video-([0-9]+)-([0-9]+)\.html$ en/video.php?cid=$1&page=$2
 RewriteCond %{QUERY_STRING} ^(.*)$

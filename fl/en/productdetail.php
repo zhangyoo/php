@@ -32,7 +32,7 @@ $id  = empty($id)  ? 0 : intval($id);
                             if($row['linkurl']=='' and $cfg_isreurl!='Y')
                                     $gourl = 'product.php?cid='.$row['id'];
                             else if($cfg_isreurl=='Y')
-                                    $gourl = 'product-'.$row['id'].'.html';
+                                    $gourl = 'product-'.$row['id'].'-1.html';
                             else
                                     $gourl = $row['linkurl'];
                     ?>
@@ -91,7 +91,7 @@ $id  = empty($id)  ? 0 : intval($id);
                                     else $picurl = 'templates/default/images/nofoundpic.gif';
 
                                     if($row['linkurl']=='' and $cfg_isreurl!='Y') $gourl = 'productdetail.php?cid='.$row['classid'].'&id='.$row['id'];
-                                    else if($cfg_isreurl=='Y') $gourl = 'productdetail-'.$row['classid'].'-'.$row['id'].'.html';
+                                    else if($cfg_isreurl=='Y') $gourl = 'productdetail-'.$row['classid'].'-'.$row['id'].'-1.html';
                                     else $gourl = $row['linkurl'];
                         ?>
                         <li>

@@ -90,7 +90,7 @@ $cid = empty($cid) ? 1 : intval($cid);
                                     else $picurl = 'templates/default/images/nofoundpic.gif';
 
                                     if($row['linkurl']=='' and $cfg_isreurl!='Y') $gourl = 'productdetail.php?cid='.$row['classid'].'&id='.$row['id'];
-                                    else if($cfg_isreurl=='Y') $gourl = 'productdetail-'.$row['classid'].'-'.$row['id'].'.html';
+                                    else if($cfg_isreurl=='Y') $gourl = 'productdetail-'.$row['classid'].'-'.$row['id'].'-1.html';
                                     else $gourl = $row['linkurl'];
                         ?>
                         <li>
