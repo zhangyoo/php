@@ -69,6 +69,10 @@ header{margin: 0 auto;width: 1200px;}
 .banner_hover_right p{text-align: center;color: #ffffff;line-height: 28px;}
 .banner_hover_right .number_num{font-size: 30px;}
 
+.weixin_hover{ position:relative;}
+.weixin_hover .weixin_hover_absolute{position:absolute;left:20%;bottom:28px;z-index:1;display:none;}
+.weixin_hover  .weixin_hover_icon:hover  .weixin_hover_absolute{display:block}
+
 /* focus */
 #focus{width:100%;height:100%;overflow:hidden;position:relative;}
 #focus ul{height:100%;position:absolute;}

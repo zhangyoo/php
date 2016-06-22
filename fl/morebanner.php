@@ -78,8 +78,14 @@
                     <p>服务热线</p>
                     <p class="number_num">158-0090-2006</p>
                     <p>我们为您提供专业的搬运解决方案</p>
-                    <p><img src="templates/cn/images/weixin_icon.png"/></p>
+                    <p class="weixin_hover">
+						<span class="weixin_hover_icon">
+						<img src="templates/cn/images/weixin_icon.png"/>
+						<span class="weixin_hover_absolute"><img width="120" height="120" src="templates/cn/images/erweima.jpg"/></span>
+						</span>
+					</p>
                     <p>搜索费兰关注我们</p>
+					
                 </div>
             </div>
         </div>
