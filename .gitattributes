@@ -1,0 +1,15 @@
+# Auto detect text files and perform LF normalization
+*        text=auto
+
+*.java   text diff=java
+*.php   text diff=php
+*.html   text diff=html
+*.py     text diff=python
+*.pl     text diff=perl
+*.css    text
+*.js     text
+*.sql    text
+
+*.sh     text eol=lf
+
+*.bat    text eol=crlf
